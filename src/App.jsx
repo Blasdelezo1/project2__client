@@ -18,6 +18,8 @@ function App() {
       </header>
       <h1>Holaa</h1>
 
+      <h2>miau miau </h2>
+
 
       <footer>
         <Footer />
