@@ -11,6 +11,7 @@ function NavBar() {
                 <Container>
                     <Navbar.Brand href="#home">DREAMERS</Navbar.Brand>
                     <Nav className="me-auto">
+                        <h1>hola</h1>
 
                     </Nav>
                 </Container>
