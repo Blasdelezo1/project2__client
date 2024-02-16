@@ -19,6 +19,8 @@ function App() {
       <h1>Holaa</h1>
       <h1>tikitktikki</h1>
 
+      <h2>miau miau </h2>
+
 
       <footer>
         <Footer />
