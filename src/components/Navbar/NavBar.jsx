@@ -13,6 +13,7 @@ function NavBar() {
                     <Nav className="me-auto">
                         <h1>hola</h1>
 
+
                     </Nav>
                 </Container>
             </Navbar>

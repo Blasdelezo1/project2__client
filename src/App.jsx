@@ -17,6 +17,7 @@ function App() {
         <NavBar />
       </header>
       <h1>Holaa</h1>
+      <h1>tikitktikki</h1>
 
 
       <footer>
