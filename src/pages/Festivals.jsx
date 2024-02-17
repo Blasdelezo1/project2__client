@@ -6,11 +6,10 @@ import Container from "react-bootstrap/esm/Container"
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
+const festivalsArr = dataFestivals.festivals
+
 
 const Festivals = () => {
-
-    const festivalsArr = dataFestivals.festivals
-
 
     return (
         <Container>
@@ -18,10 +17,12 @@ const Festivals = () => {
 
                 <h1>Festivals</h1>
 
-                <Link to="/festivals/:festivalId">
 
-                    <Row xs={1} md={2} className="g-4">
-                        {festivalsArr.map((festival) => (
+
+                <Row xs={1} md={2} className="g-4">
+
+                    {festivalsArr.map((festival) => (
+                        <Link to={`/festivals/${festival.id}`}>
                             <Col key={festival.id}>
                                 <Card>
                                     <Card.Img variant="top" src={festival.source.image} />
@@ -31,13 +32,12 @@ const Festivals = () => {
                                     </Card.Body>
                                 </Card>
                             </Col>
-                        ))}
-                    </Row>
+                        </Link>
+                    ))}
 
-                </Link>
-
+                </Row>
             </Card>
-        </Container>
+        </Container >
 
 
     )
