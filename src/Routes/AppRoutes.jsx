@@ -12,9 +12,9 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/festivals" element={<Festivals />} />
-            <Route path="/festivals/:id" element={<FestivalDetails />} />
+            <Route path="/festivals/:festivalId" element={<FestivalDetails />} />
             <Route path="/editions" element={<Editions />} />
-            <Route path="/editions/:id" element={<EditionsDetails />} />
+            <Route path="/editions/:editionId" element={<EditionsDetails />} />
 
             <Route path="*" element={<h1>404... D:</h1>} />
 
