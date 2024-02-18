@@ -15,12 +15,9 @@ const AppRoutes = () => {
             <Route path="/festivals" element={<Festivals />} />
             <Route path="/festivals/:festivalId" element={<FestivalDetails />} />
             <Route path="/editions" element={<Editions />} />
-<<<<<<< HEAD
             <Route path="/editions/:editionId" element={<EditionsDetails />} />
-=======
             <Route path="/editions/:id" element={<EditionsDetails />} />
             <Route path="/create" element={<CreateFestivalPage />} />
->>>>>>> pedro
 
             <Route path="*" element={<h1>404... D:</h1>} />
 
