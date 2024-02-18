@@ -1,43 +1,26 @@
+import './FormReviews.css'
 import { Container, Button, Form, Row, Col } from "react-bootstrap"
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import FormContactUs from "../components/FormContactUs/FormContactUs";
-import FormReviews from "../components/FormReviews/FormReviews";
 
-// const API_BASE_URL = 'localhost:5005'
+const FormReviews = () => {
 
-const CreateFestivalPage = () => {
-
-    // const [festival, setFestival] = useState({
-    //     name: '',
-    //     description: ''
-
-    // })
-
-    // const navigate = useNavigate()
-
-    // const handleFormSubmit = (e) => {
-    //     e.preventDefeault()
-
-    //     axios
-    //     .post(`${}`)
-    // }
 
     return (
 
-        <div className="CreateFestivalPage">
+        <div className="FormReviews">
 
             <Container>
                 <Row>
                     <Col md={{ span: 6, offset: 2 }}>
-                        <h3>New Festival</h3>
+                        <h3>Edition Review</h3>
                         <hr />
                         <Form className="mt-5">
                             <Row>
                                 <Col>
                                     <Form.Group className="mb-3" controlId="title">
-                                        <Form.Label>Fest Title </Form.Label>
+                                        <Form.Label>Review </Form.Label>
                                         <Form.Control
                                             type="text"
                                             value=''
@@ -48,7 +31,7 @@ const CreateFestivalPage = () => {
                                     </Form.Group>
                                 </Col>
 
-                                <Form.Group className="mb-3" controlId="description">
+                                {/* <Form.Group className="mb-3" controlId="description">
                                     <Form.Label>Description</Form.Label>
                                     <Form.Control
                                         type="text"
@@ -56,7 +39,7 @@ const CreateFestivalPage = () => {
                                         onChange=''
                                         name={'description'}
                                     />
-                                </Form.Group>
+                                </Form.Group> */}
 
                                 <Col>
 
@@ -71,16 +54,9 @@ const CreateFestivalPage = () => {
                 </Row>
 
             </Container>
-            <div>
-                <FormContactUs />
-            </div>
-            <FormReviews />
 
         </div>
-
-
     )
-
 }
 
-export default CreateFestivalPage
+export default FormReviews

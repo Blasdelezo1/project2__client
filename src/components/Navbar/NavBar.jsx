@@ -14,7 +14,7 @@ function NavBar() {
                 <Navbar bg="dark" variant="dark">
                     <Container fluid>
                         <Navbar.Brand href="/">
-                            <img src={appIcon} alt='appIcon' width='70' height='70' />
+                            <img src={appIcon} alt='appIcon' width='100' height='80' />
                         </Navbar.Brand>
                         {/* <Nav className="me-auto">
                         <Nav.Link href="/festivals">My Festivals</Nav.Link>

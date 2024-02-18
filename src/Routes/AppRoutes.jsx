@@ -16,15 +16,12 @@ const AppRoutes = () => {
             <Route path="/festivals" element={<Festivals />} />
             <Route path="/festivals/:festivalId" element={<FestivalDetails />} />
             <Route path="/editions" element={<Editions />} />
-<<<<<<< HEAD
-            <Route path="/editions/:editionId" element={<EditionsDetails />} />
-            <Route path="/editions/:id" element={<EditionsDetails />} />
-            <Route path="/create" element={<CreateFestivalPage />} />
-=======
             <Route path="/editions/:editionId" element={<EditionDetails />} />
->>>>>>> 93c4e26b7d43eecbb07adfab3784cc7d2bc756fa
-
+            {/* <Route path="/editions/:id" element={<EditionDetails />} /> */}
             <Route path="/create" element={<CreateFestivalPage />} />
+            {/* <Route path="/editions/:editionId" element={<EditionDetails />} /> */}
+
+            {/* <Route path="/create" element={<CreateFestivalPage />} /> */}
 
 
             <Route path="*" element={<NotFoundPage />} />

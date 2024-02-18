@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
-import dataFestivals from "./../../../Project-react-server/db.json"
+// import dataFestivals from "./../../../Project-react-server/db.json"
+import dataFestivals from './../../../project2_server/db.json'
 import './../App.css'
 import Card from 'react-bootstrap/Card'
 import Container from "react-bootstrap/esm/Container"
