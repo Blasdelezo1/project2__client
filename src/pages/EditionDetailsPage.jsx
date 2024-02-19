@@ -1,45 +1,61 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { Container, Row, Col, Card, Image } from "react-bootstrap"
+import { Container, Spinner } from "react-bootstrap"
 
 import axios from "axios"
 
 const API_BASE_URL = 'http://localhost:5005'
 
-
 const EditionsDetailsPage = () => {
 
-    const [edition, setEdiotion] = useState([])
+    const [edition, setEdition] = useState({})
+    const [festival, setFestival] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
+
     const { editionId } = useParams()
 
+    useEffect(() => { loadEditionsDetails() }, [])
 
-
-    useEffect(() => loadEditionsDetails(), [])
+    useEffect(() => {
+        if (edition.festivalId) {
+            loadFestival()
+        }
+    }, [edition])
 
     const loadEditionsDetails = () => {
         axios
             .get(`${API_BASE_URL}/editions/${editionId}`)
-            .then(({ data }) => setEdiotion(data))
+            .then(({ data }) => {
+                setEdition(data)
+                setIsLoading(false)
+            })
+            .catch(err => console.log(err))
+    }
+
+    const loadFestival = () => {
+        axios
+            .get(`${API_BASE_URL}/festivals/${edition.festivalId}`)
+            .then(({ data }) => {
+                setFestival(data)
+                setIsLoading(false)
+            })
             .catch(err => console.log(err))
     }
 
     return (
-
-        <>
-            < Container className="EditionsDetailsPage">
-
+        isLoading
+            ?
+            <Spinner animation="grow" />
+            :
+            <Container className="EditionsDetailsPage">
                 {
                     edition &&
                     <>
-                        <h1>{edition.year}</h1>
+                        <h1>{festival.name} edition {edition.year}</h1>
                     </>
                 }
-
-
-            </Container >
-        </>
+            </Container>
     )
-
 }
 
 export default EditionsDetailsPage

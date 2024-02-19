@@ -12,8 +12,9 @@ const FestivalDetailsPage = () => {
 
     const [festival, setFestival] = useState({})
     const [editions, setEditions] = useState([])
-    const { festivalId } = useParams()
     const [isLoading, setIsLoading] = useState(true)
+
+    const { festivalId } = useParams()
 
     useEffect(() => loadFestivalDetails(), [])
     useEffect(() => loadEditions(), [])
@@ -76,7 +77,7 @@ const FestivalDetailsPage = () => {
                 </Row>
 
                 <Row>
-                    <Col md={3}>
+                    <Col md={6}>
                         <ListGroup horizontal>
                             {
                                 editions.map((edition) => {
