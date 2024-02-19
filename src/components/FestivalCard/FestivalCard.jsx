@@ -16,4 +16,4 @@ const FestivalCard = ({ id, source, name, shortDescription }) => {
     )
 }
 
-export default FestivalCard
+export default FestivalCard 
