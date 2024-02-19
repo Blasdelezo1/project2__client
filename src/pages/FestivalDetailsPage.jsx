@@ -1,5 +1,3 @@
-import './../App.css'
-
 import { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom"
 import { Container, Row, Col, Card, Image } from "react-bootstrap"
@@ -10,14 +8,16 @@ const API_BASE_URL = 'http://localhost:5005'
 
 const FestivalDetailsPage = () => {
 
-    const [festival, setFestival] = useState([])
+    // TODO: CREAR ESTAOD DE CARGA
+
+    const [festival, setFestival] = useState({})
     const { festivalId } = useParams()
 
     useEffect(() => loadFestivalDetails(), [])
 
     const loadFestivalDetails = () => {
         axios
-            .get(`${API_BASE_URL}/festivals/${festivalId}?_embed=tasks`)
+            .get(`${API_BASE_URL}/festivals/${festivalId}?_embed=festivals`)
             .then(({ data }) => setFestival(data))
             .catch(err => console.log(err))
     }
@@ -26,7 +26,7 @@ const FestivalDetailsPage = () => {
 
 
 
-        < Container className="FestivalDetails">
+        <Container className="FestivalDetails">
 
             <Row>
                 <Col>
