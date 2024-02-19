@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
-import axios from "axios"
 import { Col, Row } from 'react-bootstrap'
+
+import axios from "axios"
+
 import FestivalCard from "../FestivalCard/FestivalCard"
 
 const API_BASE_URL = 'http://localhost:5005'
