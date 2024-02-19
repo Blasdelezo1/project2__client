@@ -17,10 +17,10 @@ function NavBar() {
                             <img src={appIcon} alt='appIcon' width='100' height='80' />
                         </Navbar.Brand>
                         {/* <Nav className="me-auto">
-                        <Nav.Link href="/festivals">My Festivals</Nav.Link>
-                        <Nav.Link href="/editions">Editions</Nav.Link>
-                        <Nav.Link href="/">Home Page</Nav.Link>
-                    </Nav> */}
+                            <Nav.Link href="/festivals">My Festivals</Nav.Link>
+                            <Nav.Link href="/editions">Editions</Nav.Link>
+                            <Nav.Link href="/">Home Page</Nav.Link>
+                        </Nav> */}
                         <Dropdown>
                             <Dropdown.Toggle variant="dark">
                                 <img src={menuIcon} alt="Menu" width="30" height="30" />
@@ -78,23 +78,6 @@ function NavBar() {
 }
 
 export default NavBar
-
-
-// < Navbar className = 'Navbar' bg = "dark" data - bs - theme="dark" >
-//     <Container>
-//         <Navbar.Brand href="/">icon</Navbar.Brand>
-//         <Navbar.Brand>
-//             <DropdownButton id="Dropdown-Button" src={menuIcon} >
-//                 <Dropdown.Item href="/festivals">My Festivals</Dropdown.Item>
-//                 <Dropdown.Item href="/editions">Editions</Dropdown.Item>
-//                 <Dropdown.Item href="/">Home Page </Dropdown.Item>
-//             </DropdownButton>
-//         </Navbar.Brand>
-
-//         <Nav className="me-auto"></Nav>
-
-//     </Container>
-//         </Navbar >
 
 
 //opcion con el estilo del button
