@@ -5,12 +5,27 @@ import Card from 'react-bootstrap/Card'
 import Container from "react-bootstrap/esm/Container"
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import { useState, useEffect } from "react"
+import axios from "axios"
 
+const API_BASE_URL = 'http://localhost:5005'
 
-const editionsArr = dataFestivals.editions
+// const editionsArr = dataFestivals.editions
+
 
 
 const Editions = () => {
+
+    const [editions, setEdiotions] = useState([])
+
+    useEffect(() => loadEditions(), [])
+
+    const loadEditions = () => {
+        axios
+            .get(`${API_BASE_URL}/editions`)
+            .then(({ data }) => setEdiotions(data))
+            .catch(err => console.log(err))
+    }
 
 
     return (
@@ -22,7 +37,7 @@ const Editions = () => {
                 <Row xs={2} md={4} className="g-4">
 
                     {
-                        editionsArr.map((edition) => (
+                        editions.map((edition) => (
                             <Link to={`/editions/${edition.id}`}>
                                 <Col key={edition.id}>
                                     <Card >
