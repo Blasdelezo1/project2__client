@@ -26,9 +26,8 @@ function NavBar() {
                                 <img src={menuIcon} alt="Menu" width="30" height="30" />
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="/festivals">My Festivals</Dropdown.Item>
+                                <Dropdown.Item href="/festivals">Festivals</Dropdown.Item>
                                 <Dropdown.Item href="/editions">Editions</Dropdown.Item>
-                                <Dropdown.Item href="/">Home Page</Dropdown.Item>
                                 <Dropdown.Item href="/create">Create Festival</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
@@ -36,58 +35,8 @@ function NavBar() {
                     </Container>
                 </Navbar>
             </div>
-
-
-
-            {/* <Navbar className='Navbar' bg="dark" data-bs-theme="dark">
-                <Container className="d-flex justify-content-between align-items-center">
-                    <Navbar.Brand href="/">
-                        <img src={appIcon}
-                            alt='appIcon'
-                            width='70'
-                            height='70'
-                        />
-                    </Navbar.Brand>
-                    <Dropdown>
-                        <Dropdown.Toggle id="dropdown-basic">
-                            <img src={menuIcon}
-                                alt="Menu"
-                                width="30"
-                                height="30"
-                            />
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item href="/festivals">My Festivals</Dropdown.Item>
-                            <Dropdown.Item href="/editions">Editions</Dropdown.Item>
-                            <Dropdown.Item href="/">Home Page </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                    <Button variant="outline-light" href="#" >Log in</Button>
-                    <Nav className="me-auto"></Nav>
-                </Container>
-            </Navbar> */}
         </header>
     )
 }
 
 export default NavBar
-
-
-//opcion con el estilo del button
-
-// < Navbar className = 'Navbar' bg = "dark" data - bs - theme="dark" >
-//     <Container>
-//         <Navbar.Brand href="/">icon</Navbar.Brand>
-//         <Dropdown>
-//             <Dropdown.Toggle id="dropdown-basic">
-//                 <img src={menuIcon} alt="Menu" width="30" height="30" />
-//             </Dropdown.Toggle>
-//             <Dropdown.Menu>
-//                 <Dropdown.Item href="/festivals">My Festivals</Dropdown.Item>
-//                 <Dropdown.Item href="/editions">Editions</Dropdown.Item>
-//                 <Dropdown.Item href="/">Home Page </Dropdown.Item>
-//             </Dropdown.Menu>
-//         </Dropdown>
-//         <Nav className="me-auto"></Nav>
-//     </Container>
-//         </Navbar >
