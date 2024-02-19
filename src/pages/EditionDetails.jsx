@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom"
-// import dataFestivals from "./../../../Project-react-server/db.json"
 import dataFestivals from './../../../project2_server/db.json'
 import './../App.css'
 import { Container, Row, Col, Card, Image } from "react-bootstrap"
