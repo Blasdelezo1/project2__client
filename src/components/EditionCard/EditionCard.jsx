@@ -1,21 +1,19 @@
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
-const EdtionCard = ({ id, sources }) => {
+const EditionCard = ({ id, festivalId, year, sources }) => {
 
     return (
         <Link to={`/editions/${id}`}>
-            <Col key={edition.id}>
-                <Card >
-                    <Card.Img variant="top" src={sources.cover} />
-                    <Card.Body>
-                        <Card.Title>Título?</Card.Title>
-                        <Card.Text>???</Card.Text>
-                    </Card.Body>
-                </Card>
-            </Col>
+            <Card >
+                <Card.Img variant="top" src={sources.cover} />
+                <Card.Body>
+                    <Card.Title>{year}</Card.Title>
+                    <Card.Text>{festivalId}</Card.Text>
+                </Card.Body>
+            </Card>
         </Link>
     )
 }
 
-export default EdtionCard
+export default EditionCard
