@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { Container, Spinner } from "react-bootstrap"
+import { Container, Spinner, Carousel } from "react-bootstrap"
 
 import axios from "axios"
 
@@ -53,6 +53,25 @@ const EditionsDetailsPage = () => {
                     <>
                         <h1>{festival.name} edition {edition.year}</h1>
                     </>
+                }
+
+                {
+                    <Carousel>
+                        {
+                            edition.sources.images.map((img) => {
+                                return (
+                                    <Carousel.Item>
+                                        <img src={img} />
+                                    </ Carousel.Item>
+                                )
+
+                            })
+                        }
+
+
+
+
+                    </Carousel>
                 }
             </Container>
     )
