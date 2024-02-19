@@ -8,7 +8,7 @@ import { Button, Dropdown, Container } from 'react-bootstrap';
 function NavBar() {
 
     return (
-        <>
+        <header>
 
             <div className='Navbar'>
                 <Navbar bg="dark" variant="dark">
@@ -39,10 +39,6 @@ function NavBar() {
 
 
 
-
-
-
-
             {/* <Navbar className='Navbar' bg="dark" data-bs-theme="dark">
                 <Container className="d-flex justify-content-between align-items-center">
                     <Navbar.Brand href="/">
@@ -70,11 +66,8 @@ function NavBar() {
                     <Nav className="me-auto"></Nav>
                 </Container>
             </Navbar> */}
-        </>
+        </header>
     )
-
-
-
 }
 
 export default NavBar

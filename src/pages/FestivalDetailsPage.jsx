@@ -1,18 +1,30 @@
-import { Link, useParams } from "react-router-dom"
-import dataFestivals from './../../../project2_server/db.json'
 import './../App.css'
+
+import { useEffect, useState } from 'react'
+import { Link, useParams } from "react-router-dom"
 import { Container, Row, Col, Card, Image } from "react-bootstrap"
 
-const festivalsArr = dataFestivals.festivals
-const editionsArr = dataFestivals.editions
+import axios from 'axios'
 
-const FestivalDetails = () => {
+const API_BASE_URL = 'http://localhost:5005'
 
+const FestivalDetailsPage = () => {
+
+    const [festival, setFestival] = useState([])
     const { festivalId } = useParams()
 
-    const festival = festivalsArr.find(festival => festival.id === parseInt(festivalId))
+    useEffect(() => loadFestivalDetails(), [])
+
+    const loadFestivalDetails = () => {
+        axios
+            .get(`${API_BASE_URL}/festivals/${festivalId}?_embed=tasks`)
+            .then(({ data }) => setFestival(data))
+            .catch(err => console.log(err))
+    }
 
     return (
+
+
 
         < Container className="FestivalDetails">
 
@@ -28,7 +40,7 @@ const FestivalDetails = () => {
             <Card body>{festival.description}</Card>
 
 
-            {/*NO FUNCIONA - MOSTRAR GENEROS*/}
+            {/* NO FUNCIONA - MOSTRAR GENEROS
             <Row>
                 <Col>
                     {
@@ -37,9 +49,9 @@ const FestivalDetails = () => {
                         })
                     }
                 </Col>
-            </Row>
+            </Row> */}
 
-            <Card body className="mt-2">
+            {/* <Card body className="mt-2">
                 <Row xs={1} md={3} className="g-4">
 
                     {editionsArr.map((edition) => (
@@ -56,7 +68,7 @@ const FestivalDetails = () => {
                     ))}
 
                 </Row>
-            </Card>
+            </Card> */}
 
 
             {/* MAPA */}
@@ -67,4 +79,4 @@ const FestivalDetails = () => {
 
 }
 
-export default FestivalDetails
+export default FestivalDetailsPage

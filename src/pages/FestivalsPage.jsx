@@ -1,15 +1,32 @@
-import { Link } from "react-router-dom"
-import dataFestivals from './../../../project2_server/db.json'
 import './../App.css'
+
+import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import axios from "axios"
+
 import Card from 'react-bootstrap/Card'
 import Container from "react-bootstrap/esm/Container"
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
-const festivalsArr = dataFestivals.festivals
+const API_BASE_URL = 'http://localhost:5005'
 
 
-const Festivals = () => {
+const FestivalsPage = () => {
+
+    // TODO: CONECTAR REACT A LA API
+
+    const [festivals, setFestivals] = useState([])
+
+    useEffect(() => loadFestivals(), [])
+
+    const loadFestivals = () => {
+        axios
+            .get(`${API_BASE_URL}/festivals?_embed=tasks`)
+            .then(({ data }) => setFestivals(data))
+            .catch(err => console.log(err))
+    }
+
 
     return (
         <Container>
@@ -21,7 +38,7 @@ const Festivals = () => {
 
                 <Row xs={1} md={2} className="g-4">
 
-                    {festivalsArr.map((festival) => (
+                    {festivals.map((festival) => (
                         <Link to={`/festivals/${festival.id}`}>
                             <Col key={festival.id}>
                                 <Card>
@@ -44,4 +61,4 @@ const Festivals = () => {
 
 }
 
-export default Festivals
+export default FestivalsPage
