@@ -13,7 +13,7 @@ const FestivalsList = () => {
 
     const loadFestivals = () => {
         axios
-            .get(`${API_BASE_URL}/festivals?_embed=tasks`)
+            .get(`${API_BASE_URL}/festivals?_embed=festivals`)
             .then(({ data }) => setFestivals(data))
             .catch(err => console.log(err))
     }
