@@ -1,5 +1,5 @@
 import { Container } from 'react-bootstrap'
-import EditionsList from '../components/EditionsList/EditionsList'
+import EditionsList from '../../components/EditionsList/EditionsList'
 
 const API_BASE_URL = 'http://localhost:5005'
 

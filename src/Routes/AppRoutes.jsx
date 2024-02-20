@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom"
-import HomePage from "../pages/Homepage"
-import FestivalsPage from "../pages/FestivalsPage"
-import FestivalDetails from "../pages/FestivalDetailsPage"
-import EditionsPage from "../pages/EditionsPage"
-import EditionDetailsPage from "../pages/EditionDetailsPage"
-import CreateFestivalPage from "../pages/CreateFestivalPage"
-import NotFoundPage from "../pages/NotFoundPage"
+import HomePage from "../pages/HomePage/Homepage"
+import FestivalsPage from "../pages/FestivalsPage/FestivalsPage"
+import FestivalDetails from "../pages/FestivalDetailsPage/FestivalDetailsPage"
+import EditionsPage from "../pages/EditionsPage/EditionsPage"
+import EditionDetailsPage from "../pages/EditionDetailsPage/EditionDetailsPage"
+import CreateFestivalPage from "../pages/CreateFestivalPage/CreateFestivalPage"
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage"
 
 
 const AppRoutes = () => {

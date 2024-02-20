@@ -1,9 +1,9 @@
 import './NavBar.css'
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar'
-import menuIcon from './../../assets/menu-icon.png'
-import appIcon from './../../assets/icon2-logo-app.png'
-import { Button, Dropdown, Container } from 'react-bootstrap';
+
+
+import menuIcon from './../../assets/images/menu-icon.png'
+import appIcon from './../../assets/images/icon2-logo-app.png'
+import { Button, Dropdown, Container, Navbar } from 'react-bootstrap'
 
 function NavBar() {
 

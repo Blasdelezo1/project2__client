@@ -1,5 +1,7 @@
 import { Container } from 'react-bootstrap'
-import FestivalsList from '../components/FestivalsList/FestivalsList'
+import FestivalsList from '../../components/FestivalsList/FestivalsList'
+
+import './FestivalsPage.css'
 
 const FestivalsPage = () => {
 

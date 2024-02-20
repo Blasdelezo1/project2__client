@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom"
 import { Container, Row, Col, Card, Image, Spinner, ListGroup } from "react-bootstrap"
 
-import EditionCard from './../components/EditionCard/EditionCard'
+import EditionCard from '../../components/EditionCard/EditionCard'
 
 import axios from 'axios'
 
