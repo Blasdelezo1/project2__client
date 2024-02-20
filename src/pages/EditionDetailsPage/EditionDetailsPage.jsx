@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { Container, Spinner, Carousel, Card, CardBody, Button } from "react-bootstrap"
+import { Container, Spinner, Carousel, Card, CardBody, ListGroup, Figure } from "react-bootstrap"
 
 import axios from "axios"
+import './EditionDetailsPage.css'
 
 const API_BASE_URL = 'http://localhost:5005'
 
@@ -47,7 +48,7 @@ const EditionsDetailsPage = () => {
             ?
             <Spinner animation="grow" />
             :
-            <Container className="EditionsDetailsPage">
+            <Container className="EditionDetailsPage">
                 {
                     edition &&
                     <>
@@ -68,8 +69,6 @@ const EditionsDetailsPage = () => {
                     <CardBody>
                         <Card>
                             <Card.Header>Tickets</Card.Header>
-
-
                             {
                                 edition.tickets.map((ticket) => {
                                     return (
@@ -82,21 +81,27 @@ const EditionsDetailsPage = () => {
                             }
                         </Card>
                     </CardBody>
-
-
                 </Card>
 
-                {/* <Figure>
-                    <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
-                        src={edition.spon}
-                    />
-                    <Figure.Caption>
-                        Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </Figure.Caption>
-                </Figure> */}
+                <ListGroup horizontal>
+                    {
+                        edition.sponsors.map((sponsor) => {
+                            return (
+                                <ListGroup.Item key={sponsor.name}>
+                                    <Figure>
+                                        <Figure.Image
+                                            width={171}
+                                            height={180}
+                                            alt="171x180"
+                                            src={sponsor.logo}
+                                        />
+                                    </Figure>
+                                </ListGroup.Item>
+                            )
+                        })
+                    }
+                </ListGroup >
+
 
                 {
                     <Carousel>
