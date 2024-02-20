@@ -18,7 +18,7 @@ const NewFestivalForm = () => {
         location: {
             country: '',
             city: '',
-            zipcode: ''
+            zipcode: 0
         },
         logo: '',
         genres: [],
@@ -42,7 +42,27 @@ const NewFestivalForm = () => {
 
     const handleInputChange = (e) => {
         const { value, name } = e.target
-        setNewFestival({ ...newFestival, [name]: value })
+        if (name === 'country' || name === 'city' || name === 'zipcode') {
+            setNewFestival({
+                ...newFestival,
+                location: {
+                    ...newFestival.location,
+                    [name]: value
+                }
+            });
+        } else if (name === 'genres') {
+            const isChecked = e.target.checked
+            const genre = e.target.value
+            let updatedGenres
+            if (isChecked) {
+                updatedGenres = [...newFestival.genres, genre];
+            } else {
+                updatedGenres = newFestival.genres.filter((g) => g !== genre)
+            }
+            setNewFestival({ ...newFestival, genres: updatedGenres })
+        } else {
+            setNewFestival({ ...newFestival, [name]: value })
+        }
     }
 
     return (
@@ -171,11 +191,12 @@ const NewFestivalForm = () => {
                                                                 className="genreCheckbox"
                                                                 inline
                                                                 label={genre}
-                                                                name={genre}
+                                                                name="genres"
                                                                 type="checkbox"
                                                                 id={genre}
                                                                 key={genre}
-                                                                value={newFestival.genres}
+                                                                value={genre}
+                                                                checked={newFestival.genres.includes(genre)}
                                                                 onChange={handleInputChange}
                                                             />
                                                         )

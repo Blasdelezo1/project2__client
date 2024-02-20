@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { Container, Spinner, Carousel, Card, CardBody, ListGroup, Figure } from "react-bootstrap"
+import { Container, Spinner, Carousel, Card, CardBody, ListGroup, Figure, Nav } from "react-bootstrap"
 
 import axios from "axios"
 import './EditionDetailsPage.css'
@@ -56,7 +56,19 @@ const EditionsDetailsPage = () => {
                     </>
                 }
 
-                <Card>
+                <Nav fill variant="tabs" defaultActiveKey="/">
+                    <Nav.Item>
+                        <Nav.Link href="/editions/{editionId}">Information</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="link-1">Media</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="link-2">Sponsors</Nav.Link>
+                    </Nav.Item>
+                </Nav>
+
+                <Card className="editionInformation">
                     <Card.Body>
                         From {edition.starts} to {edition.ends}
                     </Card.Body>
