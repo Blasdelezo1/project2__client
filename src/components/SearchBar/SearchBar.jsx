@@ -1,14 +1,14 @@
 import './SearchBar.css'
 import { useState } from 'react'
 
-const SearchBar = (onSearch) => {
+const SearchBar = ({ searchHandler }) => {
 
-    const [searchBar, setSearchBar] = useState('')
+    const [searchFest, setSearchFest] = useState('')
 
-    const handleChange = (e) => {
+    const handleSearch = (e) => {
 
-        setSearchBar(e.target.value)
-        onSearch(e.target.value)
+        setSearchFest(e.target.value)
+        searchHandler(e.target.value)
     }
 
 
@@ -17,8 +17,8 @@ const SearchBar = (onSearch) => {
         <input className='SearchBar'
             type='text'
             placeholder='Type Here...'
-            value={searchBar}
-            onChange={handleChange}
+            value={searchFest}
+            onChange={handleSearch}
         >
         </input>
     )
