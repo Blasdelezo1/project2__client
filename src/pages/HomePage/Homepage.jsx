@@ -16,21 +16,31 @@ const HomePage = () => {
 
                 <Carousel>
                     <Carousel.Item>
-                        <img src={burningManHp} alt='TODO RELLENAR' />
-                    </ Carousel.Item>
-                    <Carousel.Item>
-                        <img src={tommorrrowLandHp} alt='TODO RELLENAR' />
-                    </ Carousel.Item>
-                    <Carousel.Item>
-                        <img src={snowBombingHp} alt='TODO RELLENAR' />
-                    </ Carousel.Item>
-                    <Carousel.Item>
-                        <img src={ultraEuropeHp} alt='TODO RELLENAR' />
-                    </ Carousel.Item>
-                    <Carousel.Item>
-                        <img src={primaveraSoundHp} alt='TODO RELLENAR' />
-                    </ Carousel.Item>
+                        <img src={burningManHp}
+                            alt='burningManImage'
 
+                        />
+                    </ Carousel.Item>
+                    <Carousel.Item>
+                        <img src={tommorrrowLandHp}
+                            alt='tommorrowLandImage'
+                        />
+                    </ Carousel.Item>
+                    <Carousel.Item>
+                        <img src={snowBombingHp}
+                            alt='snowBombingImage'
+                        />
+                    </ Carousel.Item>
+                    <Carousel.Item>
+                        <img src={ultraEuropeHp}
+                            alt='ultraEuImage'
+                        />
+                    </ Carousel.Item>
+                    <Carousel.Item>
+                        <img src={primaveraSoundHp}
+                            alt='primaveraSoundImage'
+                        />
+                    </ Carousel.Item>
                 </Carousel>
 
             </Container>

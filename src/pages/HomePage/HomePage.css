@@ -1,4 +1,8 @@
 .HomePage {
-    margin-top: 20px;
+    margin-top: auto;
+    padding-top: 100px;
     margin-bottom: auto;
+    padding-bottom: 100px;
+    background-image: url(./../../assets/images/background-image2.jpg);
+
 }
