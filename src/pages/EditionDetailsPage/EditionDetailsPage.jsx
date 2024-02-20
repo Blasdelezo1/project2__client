@@ -79,43 +79,21 @@ const EditionsDetailsPage = () => {
 
                 <ListGroup horizontal>
                     {
-                        edition.sponsors.map((sponsor) => {
+                        edition.sponsors.map((sponsor, idx) => <SponsorCard {...sponsor} key={idx} />)
+                    }
+                </ListGroup >
+                <Carousel>
+                    {
+                        edition.sources.images.map((img) => {
                             return (
-                                // TODO: DESACOPLAR SPONSORCARD
-                                <ListGroup.Item key={sponsor.name}>
-                                    <Figure>
-                                        <Figure.Image
-                                            width={171}
-                                            height={180}
-                                            alt="171x180"
-                                            src={sponsor.logo}
-                                        />
-                                    </Figure>
-                                </ListGroup.Item>
+                                <Carousel.Item>
+                                    <img src={img} />
+                                </ Carousel.Item>
                             )
                         })
                     }
-                </ListGroup >
+                </Carousel>
 
-
-                {
-                    <Carousel>
-                        {
-                            edition.sources.images.map((img) => {
-                                return (
-                                    <Carousel.Item>
-                                        <img src={img} />
-                                    </ Carousel.Item>
-                                )
-
-                            })
-                        }
-
-
-
-
-                    </Carousel>
-                }
             </Container>
     )
 }
