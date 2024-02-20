@@ -102,11 +102,7 @@ const FestivalDetailsPage = () => {
                     </Col>
                 </Row>
             </Container>
-
-
-
     )
-
 }
 
 export default FestivalDetailsPage

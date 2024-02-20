@@ -67,10 +67,10 @@ const NewFestivalForm = () => {
 
     return (
 
-        <Form className="mt-5" onSubmit={handleFormSubmit}>
+        <Form onSubmit={handleFormSubmit} md={{ span: 10, offset: 1 }}>
             <Row>
                 <Col>
-                    <Form.Group className="mb-3" controlId="name">
+                    <Form.Group controlId="name">
                         <Form.Label>Festival Name</Form.Label>
                         <Form.Control
                             type="text"
@@ -83,7 +83,7 @@ const NewFestivalForm = () => {
                 </Col>
 
                 <Col>
-                    <Form.Group className="mb-3" controlId="shortDescription">
+                    <Form.Group controlId="shortDescription">
                         <Form.Label>Short Description</Form.Label>
                         <Form.Control
                             type="text"
@@ -97,7 +97,7 @@ const NewFestivalForm = () => {
             </Row>
             <Row>
                 <Col>
-                    <Form.Group className="mb-3" controlId="description">
+                    <Form.Group controlId="description">
                         <Form.Label>Description</Form.Label>
                         <Form.Control
                             type="text"
@@ -116,7 +116,7 @@ const NewFestivalForm = () => {
                             <Form.Label>Location</Form.Label>
                         </Col>
                     </Row>
-                    <InputGroup className="mb-3" controlId="location">
+                    <InputGroup controlId="location">
                         <Form.Control
                             placeholder="Country"
                             type="text"
@@ -143,7 +143,7 @@ const NewFestivalForm = () => {
             </Row>
             <Row>
                 <Col>
-                    <Form.Group className="mb-3" controlId="logo">
+                    <Form.Group controlId="logo">
                         <Form.Label>Logo</Form.Label>
                         <Form.Control
                             type="text"
@@ -156,7 +156,7 @@ const NewFestivalForm = () => {
                     </Form.Group>
                 </Col>
                 <Col>
-                    <Form.Group className="mb-3" controlId="images">
+                    <Form.Group controlId="images">
                         <Form.Label>Image</Form.Label>
                         <Form.Control
                             type="text"
@@ -165,7 +165,7 @@ const NewFestivalForm = () => {
                             name={'images'}
                             placeholder="http://"
                         />
-                        <Form.Text className="text-muted">Insert the URL of the image</Form.Text>
+                        <Form.Text>Insert the URL of the image</Form.Text>
                     </Form.Group>
                 </Col>
             </Row>
@@ -203,7 +203,7 @@ const NewFestivalForm = () => {
                         </Row>
                         <Row>
                             <Col>
-                                < Form.Text className="text-muted">Select at least 5 musical genres</Form.Text>
+                                < Form.Text>Select at least 5 musical genres</Form.Text>
                             </Col>
                         </Row>
 
