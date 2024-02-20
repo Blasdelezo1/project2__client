@@ -1,3 +1,11 @@
 .FestivalDetailsPage {
     margin: 100px auto;
 }
+
+.genresList {
+    padding: 10px;
+}
+
+.itemGenresList {
+    text-align: right;
+}

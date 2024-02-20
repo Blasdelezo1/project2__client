@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { Container, Spinner, Carousel, Card, CardBody, ListGroup, Figure, Nav } from "react-bootstrap"
 
+import SponsorCard from './../../components/SponsorCard/SponsorCard'
+import TicketsCard from './../../components/TicketsCard/TicketsCard'
+
 import axios from "axios"
 import './EditionDetailsPage.css'
 
@@ -68,15 +71,7 @@ const EditionsDetailsPage = () => {
                         <Card>
                             <Card.Header>Tickets</Card.Header>
                             {
-                                edition.tickets.map((ticket) => {
-                                    // TODO: DESACOPLAR TICKETSCARD
-                                    return (
-                                        <Card.Body key={ticket.price}>
-                                            <Card.Title>{ticket.type}</Card.Title>
-                                            <Card.Text>{ticket.price}</Card.Text>
-                                        </Card.Body>
-                                    )
-                                })
+                                edition.tickets.map((ticket, idx) => <TicketsCard {...ticket} key={idx} />)
                             }
                         </Card>
                     </CardBody>

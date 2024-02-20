@@ -26,7 +26,7 @@ const FestivalsList = () => {
 
             {
                 festivals.map((festival) => (
-                    <Col key={festival.id} md={3}>
+                    <Col key={festival.id} md={4}>
                         <FestivalCard {...festival} />
                     </Col>
                 ))

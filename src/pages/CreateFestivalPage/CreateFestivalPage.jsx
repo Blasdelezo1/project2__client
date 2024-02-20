@@ -1,5 +1,7 @@
-import { Container } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import NewFestivalForm from "../../components/NewFestivalForm/NewFestivalForm"
+
+import './CreateFestivalPage.css'
 
 
 const CreateFestivalPage = () => {

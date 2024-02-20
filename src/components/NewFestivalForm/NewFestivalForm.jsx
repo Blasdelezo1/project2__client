@@ -67,7 +67,6 @@ const NewFestivalForm = () => {
 
     return (
 
-
         <Form className="mt-5" onSubmit={handleFormSubmit}>
             <Row>
                 <Col>
@@ -102,6 +101,7 @@ const NewFestivalForm = () => {
                         <Form.Label>Description</Form.Label>
                         <Form.Control
                             type="text"
+                            className="descriptionNewFestival"
                             value={newFestival.description}
                             onChange={handleInputChange}
                             name={'description'}
@@ -211,7 +211,7 @@ const NewFestivalForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-            <div className="d-grid">
+            <div className="buttonCreate">
                 <Button variant="dark" type="submit">Create Festival</Button>
             </div>
         </Form>

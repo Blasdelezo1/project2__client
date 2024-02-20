@@ -6,7 +6,6 @@ import EditionCard from '../../components/EditionCard/EditionCard'
 
 import axios from 'axios'
 import './FestivalDetailsPage.css'
-import FestivalsPage from '../FestivalsPage/FestivalsPage'
 
 const API_BASE_URL = 'http://localhost:5005'
 
@@ -49,64 +48,62 @@ const FestivalDetailsPage = () => {
             <Spinner animation="grow" />
             :
             <Container className="FestivalDetailsPage">
-
                 <Row>
-                    <Col md={6}>
-                        <Image className="imgFestDetails" src={festival.logo} />
+                    <Col md={9}>
+                        <Row>
+                            <Col md={4}>
+                                <Image className="imgFestDetails" src={festival.logo} />
+                            </Col>
+                            <Col md={8}>
+                                <h1 className="festivalName">{festival.name}</h1>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}>
+                                <Card body>{festival.description}</Card>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}>
+                                <ListGroup horizontal>
+                                    {editions.map((edition) => {
+                                        if (edition.festivalId === festival.id) {
+                                            return (
+                                                <ListGroup.Item key={edition.id}>
+                                                    <EditionCard {...edition} />
+                                                </ListGroup.Item>
+                                            );
+                                        }
+                                    })}
+                                </ListGroup>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Link to={"/festivals"}>
+                                    <Button variant="dark">Back</Button>
+                                </Link>
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col className="festivalName">
-                        <h1>{festival.name}</h1>
-                    </Col>
-                </Row>
-
-                <Card body>{festival.description}</Card>
-
-                <Row>
                     <Col md={3}>
-                        <ListGroup>
-                            <ListGroup.Item><strong>Music Genres</strong></ListGroup.Item>
-                            {
-                                festival.genres.map((genre) => {
-                                    return (
-                                        <ListGroup.Item key={genre}>
+                        <div className="genresList">
+                            <h4 className="itemGenresList">Music Genres</h4>
+                            <ListGroup>
+                                {
+                                    festival.genres?.map((genre) => (
+                                        <ListGroup.Item key={genre} className="itemGenresList">
                                             {genre}
                                         </ListGroup.Item>
-                                    )
-                                })
-                            }
-                        </ListGroup>
+                                    ))
+                                }
+                            </ListGroup>
+                        </div>
                     </Col>
                 </Row>
-
-                <Row>
-                    <Col md={6}>
-                        <ListGroup horizontal>
-                            {
-                                editions.map((edition) => {
-                                    if (edition.festivalId === festival.id) {
-                                        return (
-                                            <ListGroup.Item key={edition.id}>
-                                                {<EditionCard {...edition} />}
-                                            </ListGroup.Item>
-                                        )
-                                    }
-
-                                })
-                            }
-                        </ListGroup>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                        <Link to={"/festivals"}>
-                            <Button variant='dark'>Back</Button>
-                        </Link>
-                    </Col>
-                </Row>
+            </Container>
 
 
-            </Container >
 
     )
 

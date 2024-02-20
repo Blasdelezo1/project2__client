@@ -6,7 +6,7 @@ import './FestivalsPage.css'
 const FestivalsPage = () => {
 
     return (
-        <Container>
+        <Container className='FestivalsPage'>
 
             <h1>Festivals</h1>
 

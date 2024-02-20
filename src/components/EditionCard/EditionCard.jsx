@@ -30,10 +30,12 @@ const EditionCard = ({ id, year, sources, festivalId }) => {
     }
 
     return (
-        <Link to={`/editions/${id}`}>
+        <Link to={`/editions/${id}`} className="EditionCardLink">
             <Card className="EditionCard">
-                <Card.Img variant="top" src={sources.cover} />
-                <Card.Body>
+                <div className="imgContainerEditionCard">
+                    <Card.Img variant="top" src={sources.cover} />
+                </div>
+                <Card.Body className="infoContainerEditionCard">
                     <Card.Title>{festival.name}</Card.Title>
                     <Card.Text>{year}</Card.Text>
                 </Card.Body>

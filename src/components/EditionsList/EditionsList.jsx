@@ -19,8 +19,7 @@ const EditionsList = () => {
     }
 
     return (
-        <Row className="g-4">
-
+        <Row>
             {
                 editions.map((edition) => (
                     <Col key={edition.id} md={3}>
@@ -28,7 +27,6 @@ const EditionsList = () => {
                     </Col>
                 ))
             }
-
         </Row>
     )
 
