@@ -73,7 +73,7 @@ const EditionsDetailsPage = () => {
                         <Card>
                             <Card.Header> <strong>Tickets</strong> </Card.Header>
                             {
-                                edition.tickets.map((ticket, idx) => <TicketsCard {...ticket} key={idx} />)
+                                edition.tickets && edition.tickets.map((ticket, idx) => <TicketsCard {...ticket} key={idx} />)
                             }
                         </Card>
                     </Col>
@@ -81,12 +81,12 @@ const EditionsDetailsPage = () => {
 
                 <ListGroup horizontal>
                     {
-                        edition.sponsors.map((sponsor, idx) => <SponsorCard {...sponsor} key={idx} />)
+                        edition.sponsors && edition.sponsors.map((sponsor, idx) => <SponsorCard {...sponsor} key={idx} />)
                     }
                 </ListGroup >
                 <Carousel>
                     {
-                        edition.sources.images.map((img) => {
+                        edition.sources.images && edition.sources.images.map((img) => {
                             return (
                                 <Carousel.Item>
                                     <img src={img} />
