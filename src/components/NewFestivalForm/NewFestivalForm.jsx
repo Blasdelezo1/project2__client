@@ -11,6 +11,8 @@ const genres = ["Pop", "Rock", "Hip-hop", "R&B", "Jazz", "Blues", "Country", "Te
 
 const NewFestivalForm = () => {
 
+    const navigate = useNavigate()
+
     const [newFestival, setNewFestival] = useState({
         name: '',
         shortDescription: '',
@@ -26,10 +28,7 @@ const NewFestivalForm = () => {
         sources: {
             images: ''
         }
-
     })
-
-    const navigate = useNavigate()
 
     const handleFormSubmit = (e) => {
         e.preventDefault()

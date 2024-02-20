@@ -56,18 +56,6 @@ const EditionsDetailsPage = () => {
                     </>
                 }
 
-                <Nav fill variant="tabs" defaultActiveKey="/">
-                    <Nav.Item>
-                        <Nav.Link href="/editions/{editionId}">Information</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-1">Media</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-2">Sponsors</Nav.Link>
-                    </Nav.Item>
-                </Nav>
-
                 <Card className="editionInformation">
                     <Card.Body>
                         From {edition.starts} to {edition.ends}

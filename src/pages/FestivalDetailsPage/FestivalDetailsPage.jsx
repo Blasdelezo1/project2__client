@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom"
-import { Container, Row, Col, Card, Image, Spinner, ListGroup } from "react-bootstrap"
+import { Container, Row, Col, Card, Image, Spinner, ListGroup, Button } from "react-bootstrap"
 
 import EditionCard from '../../components/EditionCard/EditionCard'
 
 import axios from 'axios'
+import './FestivalDetailsPage.css'
+import FestivalsPage from '../FestivalsPage/FestivalsPage'
 
 const API_BASE_URL = 'http://localhost:5005'
 
@@ -46,7 +48,7 @@ const FestivalDetailsPage = () => {
             ?
             <Spinner animation="grow" />
             :
-            <Container className="FestivalDetails">
+            <Container className="FestivalDetailsPage">
 
                 <Row>
                     <Col md={6}>
@@ -92,6 +94,14 @@ const FestivalDetailsPage = () => {
                                 })
                             }
                         </ListGroup>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col>
+                        <Link to={"/festivals"}>
+                            <Button variant='dark'>Back</Button>
+                        </Link>
                     </Col>
                 </Row>
 
