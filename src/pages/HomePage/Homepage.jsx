@@ -16,19 +16,19 @@ const HomePage = () => {
 
                 <Carousel>
                     <Carousel.Item>
-                        <img src={burningManHp} />
+                        <img src={burningManHp} alt='TODO RELLENAR' />
                     </ Carousel.Item>
                     <Carousel.Item>
-                        <img src={tommorrrowLandHp} />
+                        <img src={tommorrrowLandHp} alt='TODO RELLENAR' />
                     </ Carousel.Item>
                     <Carousel.Item>
-                        <img src={snowBombingHp} />
+                        <img src={snowBombingHp} alt='TODO RELLENAR' />
                     </ Carousel.Item>
                     <Carousel.Item>
-                        <img src={ultraEuropeHp} />
+                        <img src={ultraEuropeHp} alt='TODO RELLENAR' />
                     </ Carousel.Item>
                     <Carousel.Item>
-                        <img src={primaveraSoundHp} />
+                        <img src={primaveraSoundHp} alt='TODO RELLENAR' />
                     </ Carousel.Item>
 
                 </Carousel>

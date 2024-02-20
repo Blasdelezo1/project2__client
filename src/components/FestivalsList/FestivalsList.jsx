@@ -22,7 +22,7 @@ const FestivalsList = () => {
 
 
     return (
-        <Row className="g-4">
+        <Row>
 
             {
                 festivals.map((festival) => (

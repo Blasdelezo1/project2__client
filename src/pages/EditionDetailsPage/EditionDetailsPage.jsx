@@ -18,9 +18,7 @@ const EditionsDetailsPage = () => {
     useEffect(() => { loadEditionsDetails() }, [])
 
     useEffect(() => {
-        if (edition.festivalId) {
-            loadFestival()
-        }
+        edition.festivalId && loadFestival()
     }, [edition])
 
     const loadEditionsDetails = () => {
@@ -71,6 +69,7 @@ const EditionsDetailsPage = () => {
                             <Card.Header>Tickets</Card.Header>
                             {
                                 edition.tickets.map((ticket) => {
+                                    // TODO: DESACOPLAR TICKETSCARD
                                     return (
                                         <Card.Body key={ticket.price}>
                                             <Card.Title>{ticket.type}</Card.Title>
@@ -87,6 +86,7 @@ const EditionsDetailsPage = () => {
                     {
                         edition.sponsors.map((sponsor) => {
                             return (
+                                // TODO: DESACOPLAR SPONSORCARD
                                 <ListGroup.Item key={sponsor.name}>
                                     <Figure>
                                         <Figure.Image

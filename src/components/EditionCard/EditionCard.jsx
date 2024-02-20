@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Card } from "react-bootstrap"
 
 import axios from "axios"
+import './EditionCard.css'
 
 const API_BASE_URL = 'http://localhost:5005'
 
@@ -13,10 +14,8 @@ const EditionCard = ({ id, year, sources, festivalId }) => {
 
 
     useEffect(() => {
-        if (festivalId) {
-            loadFestival()
-        }
-    }, [{}])
+        festivalId && loadFestival()
+    }, [])
 
 
 
@@ -32,7 +31,7 @@ const EditionCard = ({ id, year, sources, festivalId }) => {
 
     return (
         <Link to={`/editions/${id}`}>
-            <Card >
+            <Card className="EditionCard">
                 <Card.Img variant="top" src={sources.cover} />
                 <Card.Body>
                     <Card.Title>{festival.name}</Card.Title>

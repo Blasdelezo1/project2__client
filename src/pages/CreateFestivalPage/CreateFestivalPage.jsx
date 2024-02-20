@@ -7,13 +7,18 @@ const CreateFestivalPage = () => {
 
     return (
 
-        <Container>
+        <Container className="NewFestivalForm">
+            <Row>
+                <Col md={{ span: 10, offset: 1 }}>
 
-            <h1>Create Festival</h1>
+                    <h1>Create Festival</h1>
 
-            <NewFestivalForm />
+                    <NewFestivalForm />
 
-        </Container >
+                </Col>
+            </Row>
+
+        </Container>
     )
 
 }
