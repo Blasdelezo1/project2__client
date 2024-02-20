@@ -1,0 +1,22 @@
+.NewFestivalForm {
+    margin-bottom: 80px;
+}
+
+.NewFestivalForm h3 {
+    margin: 20px auto;
+}
+
+.d-grid {
+    margin: 20px auto;
+}
+
+.genreCheckbox {
+    width: 30%;
+
+}
+
+.genres-box {
+    border: 1px solid rgb(207, 205, 205);
+    width: 100%;
+    margin: 10px 5px;
+}
