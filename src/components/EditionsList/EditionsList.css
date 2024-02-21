@@ -1,6 +1,6 @@
-.container p {
+.filtered-edition-list {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 0px;
     margin: 0px;
     margin-right: 100px;

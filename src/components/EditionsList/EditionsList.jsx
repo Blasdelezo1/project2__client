@@ -34,13 +34,15 @@ const EditionsList = () => {
     }
 
     return (
+
         <Row>
-            <div className="container">
-                <h4>Find your edition</h4>
-                <p><i>*filtered by year*</i></p>
+            <SearchBar searchHandler={searchHandler} />
+            <div >
+
+                <p className="filtered-edition-list"><i>*filtered by year*</i></p>
             </div>
 
-            <SearchBar searchHandler={searchHandler} />
+
             {
                 editions.map((edition) => (
                     <Col key={edition.id} md={3}>

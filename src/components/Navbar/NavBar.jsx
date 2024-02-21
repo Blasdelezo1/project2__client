@@ -20,6 +20,7 @@ function NavBar() {
                             <Nav.Link href="/festivals">Festivals</Nav.Link>
                             <Nav.Link href="/editions">Editions</Nav.Link>
                             <Nav.Link href="/create">Create Festival</Nav.Link>
+                            <Nav.Link href="/create/:newedition">Create Edition</Nav.Link>
                         </Nav>
                         {/* <Dropdown>
                             <Dropdown.Toggle variant="dark">

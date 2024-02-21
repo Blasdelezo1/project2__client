@@ -1,5 +1,7 @@
 import './SearchBar.css'
-import { Form, InputGroup } from 'react-bootstrap/esm/FormCheckInput'
+
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
 const SearchBar = ({ searchHandler }) => {

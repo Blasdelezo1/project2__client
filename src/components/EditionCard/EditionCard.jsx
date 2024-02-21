@@ -22,6 +22,7 @@ const EditionCard = ({ id, year, sources, festivalId }) => {
             .catch(err => console.log(err))
     }
 
+
     return (
         <Link to={`/editions/${id}`} className="EditionCardLink">
             <Card className="EditionCard">
