@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { Form, Row, Col, Container, Button, InputGroup } from 'react-bootstrap'
+
 import axios from 'axios'
 import './EditFestivalForm.css'
 
 const API_BASE_URL = 'http://localhost:5005'
+
 const genres = ["Pop", "Rock", "Hip-hop", "R&B", "Jazz", "Blues", "Country", "Techno", "House", "Trance", "Drum and Bass", "Reggae", "Punk", "Metal", "Indie", "Alternative", "Funk", "Disco"]
 
 const EditFestivalForm = () => {
@@ -22,26 +23,28 @@ const EditFestivalForm = () => {
         outdoor: false,
     })
 
-    const { festivalId } = useParams()
-    const navigate = useNavigate()
+    const { festivalId } = useParams();
+    const navigate = useNavigate();
 
-    useEffect(() => {
-        loadFestivalDetails()
-    }, [])
+    useEffect(() => loadFestivalDetails(), [])
 
     const loadFestivalDetails = () => {
         axios
-            .get(`${API_BASE_URL}/festivals/${festivalId}/edit`)
+            .get(`${API_BASE_URL}/festivals/${festivalId}`)
             .then(({ data }) => setFestivalData(data))
             .catch(err => console.log(err))
     }
 
     const handleFormSubmit = (e) => {
+
         e.preventDefault()
 
         axios
-            .put(`${API_BASE_URL}/festivals/${festivalId}/edit`, festivalData)
-            .then(() => navigate(`/festivals/${festivalId}`))
+            .put(`${API_BASE_URL}/festivals/${festivalId}`, festivalData)
+            .then(() => {
+                loadFestivalDetails();
+                navigate(`/festivals/${festivalId}`)
+            })
             .catch(err => console.log(err))
     }
 
@@ -53,20 +56,30 @@ const EditFestivalForm = () => {
             } else {
                 setFestivalData({ ...festivalData, genres: festivalData.genres.filter(genre => genre !== value) })
             }
+        } else if (name === 'zipcode') {
+            setFestivalData({ ...festivalData, location: { ...festivalData.location, [name]: parseInt(value) } })
         } else {
             setFestivalData({ ...festivalData, [name]: value })
         }
     }
 
+
     return (
+
+
         <Form onSubmit={handleFormSubmit}>
+            <Row>
+                <Col>
+                    <h1>Edit {festivalData.name}</h1>
+                </Col>
+            </Row>
             <Row>
                 <Col>
                     <Form.Group controlId="name">
                         <Form.Label>Festival Name</Form.Label>
                         <Form.Control
                             type="text"
-                            defaultValue={festivalData.name} // Asignar el valor actual como defaultValue
+                            defaultValue={festivalData.name}
                             onChange={handleInputChange}
                             name="name"
                         />
@@ -78,7 +91,7 @@ const EditFestivalForm = () => {
                         <Form.Label>Short Description</Form.Label>
                         <Form.Control
                             type="text"
-                            defaultValue={festivalData.shortDescription} // Asignar el valor actual como defaultValue
+                            defaultValue={festivalData.shortDescription}
                             onChange={handleInputChange}
                             name="shortDescription"
                         />
@@ -92,7 +105,7 @@ const EditFestivalForm = () => {
                         <Form.Label>Description</Form.Label>
                         <Form.Control
                             type="text"
-                            defaultValue={festivalData.description} // Asignar el valor actual como defaultValue
+                            defaultValue={festivalData.description}
                             onChange={handleInputChange}
                             name="description"
                         />

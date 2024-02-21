@@ -23,7 +23,7 @@ const FestivalDetailsPage = () => {
 
     const loadFestivalDetails = () => {
         axios
-            .get(`${API_BASE_URL}/festivals/${festivalId}?_embed=festivals`)
+            .get(`${API_BASE_URL}/festivals/${festivalId}`)
             .then(({ data }) => {
                 setFestival(data)
                 setIsLoading(false)
@@ -33,10 +33,11 @@ const FestivalDetailsPage = () => {
 
     const loadEditions = () => {
         axios
-            .get(`${API_BASE_URL}/editions?_embed=editions`)
+            .get(`${API_BASE_URL}/editions`)
             .then(({ data }) => {
-                setEditions(data)
-                setIsLoading(false)
+                const filteredEditions = data.filter(edition => edition.festivalId === festivalId);
+                setEditions(filteredEditions);
+                setIsLoading(false);
             })
             .catch(err => console.log(err))
     }
