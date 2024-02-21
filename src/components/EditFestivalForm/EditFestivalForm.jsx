@@ -17,10 +17,9 @@ const EditFestivalForm = () => {
         location: {
             country: '',
             city: '',
-            zipcode: 0
+            zipcode: ''
         },
         genres: [],
-        outdoor: false,
     })
 
     const { festivalId } = useParams();
@@ -67,17 +66,13 @@ const EditFestivalForm = () => {
     return (
 
 
-        <Form onSubmit={handleFormSubmit}>
-            <Row>
-                <Col>
-                    <h1>Edit {festivalData.name}</h1>
-                </Col>
-            </Row>
-            <Row>
+        <Form onSubmit={handleFormSubmit} className='EditFestivalForm'>
+            <Row className='rowEditFestival'>
                 <Col>
                     <Form.Group controlId="name">
                         <Form.Label>Festival Name</Form.Label>
                         <Form.Control
+                            disabled
                             type="text"
                             defaultValue={festivalData.name}
                             onChange={handleInputChange}
@@ -99,7 +94,7 @@ const EditFestivalForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-            <Row>
+            <Row className='rowEditFestival'>
                 <Col>
                     <Form.Group controlId="description">
                         <Form.Label>Description</Form.Label>
@@ -112,7 +107,7 @@ const EditFestivalForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-            <Row>
+            <Row className='rowEditFestival'>
                 <Col>
                     <Row>
                         <Col>
@@ -123,28 +118,43 @@ const EditFestivalForm = () => {
                         <Form.Control
                             placeholder="Country"
                             type="text"
-                            defaultValue={festivalData.location.country} // Asignar el valor actual como defaultValue
+                            defaultValue={festivalData.location.country}
                             onChange={handleInputChange}
                             name="country"
                         />
                         <Form.Control
                             placeholder="City"
                             type="text"
-                            defaultValue={festivalData.location.city} // Asignar el valor actual como defaultValue
-                            onChange={handleInputChange}
+                            defaultValue={festivalData.location.city}
                             name="city"
                         />
                         <Form.Control
                             placeholder="ZipCode"
                             type="number"
-                            defaultValue={festivalData.location.zipcode} // Asignar el valor actual como defaultValue
+                            defaultValue={festivalData.location.zipcode}
                             onChange={handleInputChange}
                             name="zipcode"
                         />
                     </InputGroup>
                 </Col>
             </Row>
-            <Row>
+            <Row className='rowEditFestival'>
+                <Col>
+                    <Form.Group controlId="logo">
+                        <Form.Label>Logo</Form.Label>
+                        <Form.Control
+                            disabled
+                            type="text"
+                            value={festivalData.logo}
+                            onChange={handleInputChange}
+                            name={'logo'}
+                            placeholder="http://"
+                        />
+                        <Form.Text className="text-muted">Insert the URL of the logo in png format</Form.Text>
+                    </Form.Group>
+                </Col>
+            </Row>
+            <Row className='rowEditFestival'>
                 <Col>
                     <Form.Group controlId="genres">
                         <Row>

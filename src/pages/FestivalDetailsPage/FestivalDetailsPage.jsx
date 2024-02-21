@@ -16,10 +16,13 @@ const FestivalDetailsPage = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const { festivalId } = useParams()
+
     const navigate = useNavigate()
 
-    useEffect(() => loadFestivalDetails(), [])
-    useEffect(() => loadEditions(), [])
+    useEffect(() => {
+        loadFestivalDetails()
+        loadEditions()
+    }, [])
 
     const loadFestivalDetails = () => {
         axios
@@ -32,6 +35,7 @@ const FestivalDetailsPage = () => {
     }
 
     const loadEditions = () => {
+        // TODO: RESOLVER ESTO CON QUERY DE JSON SERVER
         axios
             .get(`${API_BASE_URL}/editions`)
             .then(({ data }) => {
@@ -43,7 +47,6 @@ const FestivalDetailsPage = () => {
     }
 
     const deleteFestival = () => {
-
         axios
             .delete(`${API_BASE_URL}/festivals/${festivalId}`)
             .then(() => navigate('/festivals'))
@@ -77,15 +80,17 @@ const FestivalDetailsPage = () => {
                         <Row>
                             <Col md={12}>
                                 <ListGroup horizontal>
-                                    {editions.map((edition) => {
-                                        if (edition.festivalId === festival.id) {
-                                            return (
-                                                <ListGroup.Item key={edition.id}>
-                                                    <EditionCard {...edition} />
-                                                </ListGroup.Item>
-                                            );
-                                        }
-                                    })}
+                                    {
+                                        editions.map((edition) => {
+                                            if (edition.festivalId === festival.id) {
+                                                return (
+                                                    <ListGroup.Item key={edition.id}>
+                                                        <EditionCard {...edition} />
+                                                    </ListGroup.Item>
+                                                );
+                                            }
+                                        })
+                                    }
                                 </ListGroup>
                             </Col>
                         </Row>

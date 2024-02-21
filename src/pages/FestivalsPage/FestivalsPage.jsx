@@ -6,21 +6,13 @@ import './FestivalsPage.css'
 const FestivalsPage = () => {
 
     return (
-        <>
+        <Container className='FestivalsPage'>
 
-            <Container className='FestivalsPage'>
+            <h1>Festivals</h1>
 
-                <h1>Festivals</h1>
+            <FestivalsList />
 
-                <FestivalsList />
-            </Container >
-
-
-
-        </>
-
-
-
+        </Container >
     )
 }
 

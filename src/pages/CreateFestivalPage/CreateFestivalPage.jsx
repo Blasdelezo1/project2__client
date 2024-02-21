@@ -10,6 +10,7 @@ const CreateFestivalPage = () => {
     return (
 
         <Container className="NewFestivalForm">
+
             <Row>
                 <Col md={{ span: 10, offset: 1 }}>
 

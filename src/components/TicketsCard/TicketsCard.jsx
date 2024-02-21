@@ -5,8 +5,8 @@ import './TicketsCard.css'
 const TicketsCard = ({ type, price }) => {
 
     return (
-        <Card.Body key={price} className="TicketsCard">
-            <Card.Text className="type">Type: {type}</Card.Text>
+        <Card.Body className="TicketsCard">
+            <Card.Text className="typeTicketCard">Type: <strong> {type}</strong></Card.Text>
             <Card.Text className="priceTicketCard">Price: <strong>{price}€</strong></Card.Text>
         </Card.Body>
     )

@@ -2,19 +2,16 @@ img {
     width: 100%;
 }
 
-.mt-2 {
-    margin-top: 30px;
-    margin-bottom: 50PX;
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-.imgFestDetails {
-    width: 300px;
-}
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
 
-Container {
-    margin-bottom: 200px;
-}
-
-.festivalName {
-    margin: 100px 0;
 }

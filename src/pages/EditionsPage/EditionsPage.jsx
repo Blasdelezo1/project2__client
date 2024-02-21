@@ -16,11 +16,8 @@ const EditionsPage = () => {
 
             <EditionsList />
 
-
         </Container >
-
     )
-
 }
 
 export default EditionsPage

@@ -1,0 +1,16 @@
+.SponsorCardLogo {
+    border: none;
+}
+
+
+.imgSponsorContainer {
+    width: 100px;
+    height: 100px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.sponsorImg {
+    border: none;
+}

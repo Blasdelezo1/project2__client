@@ -10,22 +10,15 @@ const API_BASE_URL = 'http://localhost:5005'
 const EditionCard = ({ id, year, sources, festivalId }) => {
 
     const [festival, setFestival] = useState({})
-    const [isLoading, setIsLoading] = useState(true)
-
 
     useEffect(() => {
         festivalId && loadFestival()
     }, [])
 
-
-
     const loadFestival = () => {
         axios
             .get(`${API_BASE_URL}/festivals/${festivalId}`)
-            .then(({ data }) => {
-                setFestival(data)
-                setIsLoading(false)
-            })
+            .then(({ data }) => setFestival(data))
             .catch(err => console.log(err))
     }
 

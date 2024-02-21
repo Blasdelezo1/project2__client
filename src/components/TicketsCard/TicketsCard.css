@@ -1,3 +1,12 @@
 .TicketsCard {
+    padding: 10px 3px;
     border-bottom: .5px solid rgb(160, 159, 159);
+}
+
+.typeTicketCard {
+    margin: 5px;
+}
+
+.priceTicketCard {
+    margin: 5px;
 }
