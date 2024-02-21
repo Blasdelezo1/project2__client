@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 import { Container, Row, Col, Card, Image, Spinner, ListGroup, Button } from "react-bootstrap"
 
 import EditionCard from '../../components/EditionCard/EditionCard'
@@ -16,6 +16,7 @@ const FestivalDetailsPage = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const { festivalId } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => loadFestivalDetails(), [])
     useEffect(() => loadEditions(), [])
@@ -39,6 +40,15 @@ const FestivalDetailsPage = () => {
             })
             .catch(err => console.log(err))
     }
+
+    const deleteFestival = () => {
+
+        axios
+            .delete(`${API_BASE_URL}/festivals/${festivalId}`)
+            .then(() => navigate('/festivals'))
+            .catch(err => console.log(err))
+    }
+
 
 
     return (
@@ -82,6 +92,16 @@ const FestivalDetailsPage = () => {
                             <Col>
                                 <Link to={"/festivals"}>
                                     <Button variant="dark">Back</Button>
+                                </Link>
+                            </Col>
+                            <Col>
+                                <Link to={`/festivals/${festivalId}/edit`}>
+                                    <Button variant="dark">Edit</Button>
+                                </Link>
+                            </Col>
+                            <Col>
+                                <Link to={"/festivals"}>
+                                    <Button onClick={deleteFestival} variant="dark">Delete</Button>
                                 </Link>
                             </Col>
                         </Row>

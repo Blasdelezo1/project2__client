@@ -6,6 +6,7 @@ import EditionsPage from "../pages/EditionsPage/EditionsPage"
 import EditionDetailsPage from "../pages/EditionDetailsPage/EditionDetailsPage"
 import CreateFestivalPage from "../pages/CreateFestivalPage/CreateFestivalPage"
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage"
+import EditFestivalPage from "../pages/EditFestivalPage/EditFestivalPage"
 
 
 const AppRoutes = () => {
@@ -19,6 +20,7 @@ const AppRoutes = () => {
             <Route path="/editions/:editionId" element={<EditionDetailsPage />} />
 
             <Route path="/create" element={<CreateFestivalPage />} />
+            <Route path="/festivals/:festivalId/edit" element={<EditFestivalPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
 
