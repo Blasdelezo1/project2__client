@@ -4,13 +4,14 @@ import { Col, Row, Container } from 'react-bootstrap'
 import axios from "axios"
 
 import FestivalCard from "../FestivalCard/FestivalCard"
+import SearchBar from "../SearchBar/SearchBar"
 
 const API_BASE_URL = 'http://localhost:5005'
 
 const FestivalsList = () => {
 
     const [festivals, setFestivals] = useState([])
-    // const [query, setQuery] = useState('')
+    const [query, setQuery] = useState('')
 
     useEffect(() => loadFestivals(), [])
 
@@ -21,38 +22,40 @@ const FestivalsList = () => {
             .catch(err => console.log(err))
     }
 
-    // useEffect(() => loadSearchedFestivals(), [query])
+    useEffect(() => loadSearchedFestivals(), [query])
 
-    // const loadSearchedFestivals = () => {
-    //     axios
-    //         .get(`${API_BASE_URL}/search?q=${query}`)
-    //         .then(({data}) => setFestivals(data))
-    // }
+    const loadSearchedFestivals = () => {
+        axios
+            .get(`${API_BASE_URL}/festivals?name_like=${query}`)
+            .then(({ data }) => setFestivals(data))
+    }
 
-    // const searchHandler = (searchFest) => {
-    //     setQuery(searchFest)
-    // }
+    const searchHandler = (searchFest) => {
+        setQuery(searchFest)
+    }
 
 
 
 
     return (
+        <>
 
-        <Container>
-            <Row>
+            <Container>
+                <SearchBar searchHandler={searchHandler} />
+                <Row>
 
-                {
-                    festivals.map((festival) => (
+                    {
+                        festivals.map((festival) => (
 
-                        <Col key={festival.id} md={6}>
-                            <FestivalCard {...festival} />
-                        </Col>
-                    ))
-                }
+                            <Col key={festival.id} md={6}>
+                                <FestivalCard {...festival} />
+                            </Col>
+                        ))
+                    }
 
-            </Row>
-        </Container>
-
+                </Row>
+            </Container>
+        </>
     )
 }
 
