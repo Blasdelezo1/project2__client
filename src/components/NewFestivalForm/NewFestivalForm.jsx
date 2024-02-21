@@ -25,9 +25,6 @@ const NewFestivalForm = () => {
         logo: '',
         genres: [],
         outdoor: false,
-        sources: {
-            images: ''
-        }
     })
 
     const handleFormSubmit = (e) => {
@@ -155,19 +152,6 @@ const NewFestivalForm = () => {
                         <Form.Text className="text-muted">Insert the URL of the logo in png format</Form.Text>
                     </Form.Group>
                 </Col>
-                <Col>
-                    <Form.Group controlId="images">
-                        <Form.Label>Image</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={newFestival.sources.images}
-                            onChange={handleInputChange}
-                            name={'images'}
-                            placeholder="http://"
-                        />
-                        <Form.Text>Insert the URL of the image</Form.Text>
-                    </Form.Group>
-                </Col>
             </Row>
             <Row>
                 <Col>
@@ -209,6 +193,18 @@ const NewFestivalForm = () => {
 
 
                     </Form.Group>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Form.Check
+                        type="switch"
+                        label="Outdoor festival?"
+                        className="outdoor"
+                        value={newFestival.outdoor}
+                        onChange={handleInputChange}
+                        name={'outdoor'}
+                    />
                 </Col>
             </Row>
             <div className="buttonCreate">
