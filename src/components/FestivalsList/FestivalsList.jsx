@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Container } from 'react-bootstrap'
 
 import axios from "axios"
 
@@ -37,17 +37,21 @@ const FestivalsList = () => {
 
 
     return (
-        <Row>
 
-            {
-                festivals.map((festival) => (
-                    <Col key={festival.id} md={4}>
-                        <FestivalCard {...festival} />
-                    </Col>
-                ))
-            }
+        <Container>
+            <Row>
 
-        </Row>
+                {
+                    festivals.map((festival) => (
+
+                        <Col key={festival.id} md={6}>
+                            <FestivalCard {...festival} />
+                        </Col>
+                    ))
+                }
+
+            </Row>
+        </Container>
 
     )
 }
