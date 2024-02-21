@@ -1,5 +1,6 @@
 import './SearchBar.css'
-import { Form } from 'react-bootstrap'
+import { Form, InputGroup } from 'react-bootstrap/esm/FormCheckInput'
+
 
 const SearchBar = ({ searchHandler }) => {
 
@@ -10,13 +11,25 @@ const SearchBar = ({ searchHandler }) => {
     // TODO: COMPONETIZAR CON BS
     return (
         <div className='SearchBar'>
-            <input
-                type='text'
-                placeholder='Type Here...'
-                onChange={handleSearch}
-            />
+            <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">🕵</InputGroup.Text>
+                <Form.Control
+
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                    type='text'
+                    placeholder='Type Here...'
+                    onChange={handleSearch}
+                />
+            </InputGroup>
         </div>
     )
 }
 
 export default SearchBar
+
+//     < input
+// type = 'text'
+// placeholder = 'Type Here...'
+// onChange = { handleSearch }
+//     />
