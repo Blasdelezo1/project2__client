@@ -66,15 +66,15 @@ const FestivalDetailsPage = () => {
                     <Col md={9}>
                         <Row>
                             <Col md={4}>
-                                <Image className="imgFestDetails" src={festival.logo} />
+                                <Image src={festival.logo} />
                             </Col>
-                            <Col md={8}>
-                                <h1 className="festivalName">{festival.name}</h1>
+                            <Col className='festivalNameContent' md={8}>
+                                <h1>{festival.name}</h1>
                             </Col>
                         </Row>
                         <Row>
                             <Col md={12}>
-                                <Card body>{festival.description}</Card>
+                                <Card body className='descriptionFestivalDetails'>{festival.description}</Card>
                             </Col>
                         </Row>
                         <Row>
@@ -95,26 +95,22 @@ const FestivalDetailsPage = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col className='buttonContainer'>
                                 <Link to={"/festivals"}>
-                                    <Button variant="dark">Back</Button>
+                                    <Button className="buttonFestivalDetails" variant="dark">Back</Button>
                                 </Link>
-                            </Col>
-                            <Col>
                                 <Link to={`/festivals/${festivalId}/edit`}>
-                                    <Button variant="dark">Edit</Button>
+                                    <Button className="buttonFestivalDetails" variant="dark">Edit</Button>
                                 </Link>
-                            </Col>
-                            <Col>
                                 <Link to={"/festivals"}>
-                                    <Button onClick={deleteFestival} variant="dark">Delete</Button>
+                                    <Button className="buttonFestivalDetails" onClick={deleteFestival} variant="dark">Delete</Button>
                                 </Link>
                             </Col>
                         </Row>
                     </Col>
                     <Col md={3}>
                         <div className="genresList">
-                            <h4 className="itemGenresList">Music Genres</h4>
+                            <h4 className="titleMusicGenres">Music Genres</h4>
                             <ListGroup>
                                 {
                                     festival.genres?.map((genre) => (

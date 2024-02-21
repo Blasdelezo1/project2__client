@@ -35,9 +35,9 @@ const EditionsList = () => {
 
     return (
         <Row>
-            <div className="container">
+            <div className="EditionListContainer">
                 <h4>Find your edition</h4>
-                <p><i>*filtered by year*</i></p>
+                <p className="filteredEditionList"><i>*filtered by year*</i></p>
             </div>
 
             <SearchBar searchHandler={searchHandler} />
