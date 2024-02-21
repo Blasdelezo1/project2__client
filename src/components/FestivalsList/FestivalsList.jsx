@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Row, Container } from 'react-bootstrap'
+import { Col, Row, Container, Button } from 'react-bootstrap'
 
 import axios from "axios"
 
@@ -40,21 +40,26 @@ const FestivalsList = () => {
     return (
         <>
 
-            <Container>
-                <SearchBar searchHandler={searchHandler} />
-                <Row>
 
-                    {
-                        festivals.map((festival) => (
+            <div className="button-container">
 
-                            <Col key={festival.id} md={6}>
-                                <FestivalCard {...festival} />
-                            </Col>
-                        ))
-                    }
+                <Button variant="dark" type="submit">Sort by genre</Button>
+                <Button variant="dark" type="submit">Outdoor?</Button>
+            </div>
+            <SearchBar searchHandler={searchHandler} />
+            <Row>
 
-                </Row>
-            </Container>
+                {
+                    festivals.map((festival) => (
+
+                        <Col key={festival.id} md={4}>
+                            <FestivalCard {...festival} />
+                        </Col>
+                    ))
+                }
+
+            </Row>
+
         </>
     )
 }
