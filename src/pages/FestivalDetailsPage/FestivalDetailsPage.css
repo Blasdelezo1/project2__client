@@ -1,13 +1,47 @@
 .FestivalDetailsPage {
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
-.imgFestDetails {}
+.festivalNameContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descriptionFestivalDetails {
+    border: none;
+    text-align: justify;
+    font-size: 1.2em;
+    margin: 30px auto;
+    text-indent: 30px;
+    line-height: 30px;
+}
+
 
 .genresList {
+    padding: 10px;
+    margin-top: 150px;
+}
+
+.titleMusicGenres {
+    text-align: right;
+    background-color: rgb(209, 208, 208);
     padding: 10px;
 }
 
 .itemGenresList {
     text-align: right;
+    border: none;
+    border-bottom: 1px solid rgb(209, 208, 208);
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonFestivalDetails {
+    width: 150px;
+    height: 50px;
+    font-size: 1.2em;
 }
