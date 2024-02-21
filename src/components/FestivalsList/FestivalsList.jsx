@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Row, Container } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 import axios from "axios"
 
@@ -11,7 +11,6 @@ const API_BASE_URL = 'http://localhost:5005'
 const FestivalsList = () => {
 
     const [festivals, setFestivals] = useState([])
-    const [query, setQuery] = useState('')
 
     useEffect(() => loadFestivals(), [])
 
@@ -22,39 +21,31 @@ const FestivalsList = () => {
             .catch(err => console.log(err))
     }
 
-    useEffect(() => loadSearchedFestivals(), [query])
-
-    const loadSearchedFestivals = () => {
+    const loadSearchedFestivals = query => {
         axios
             .get(`${API_BASE_URL}/festivals?name_like=${query}`)
             .then(({ data }) => setFestivals(data))
+            .catch(err => console.log(err))
     }
 
     const searchHandler = (searchFest) => {
-        setQuery(searchFest)
+        loadSearchedFestivals(searchFest)
     }
-
-
-
 
     return (
         <>
+            <SearchBar searchHandler={searchHandler} />
+            <Row>
+                {
+                    festivals.map((festival) => (
 
-            <Container>
-                <SearchBar searchHandler={searchHandler} />
-                <Row>
+                        <Col key={festival.id} md={6}>
+                            <FestivalCard {...festival} />
+                        </Col>
+                    ))
+                }
 
-                    {
-                        festivals.map((festival) => (
-
-                            <Col key={festival.id} md={6}>
-                                <FestivalCard {...festival} />
-                            </Col>
-                        ))
-                    }
-
-                </Row>
-            </Container>
+            </Row>
         </>
     )
 }

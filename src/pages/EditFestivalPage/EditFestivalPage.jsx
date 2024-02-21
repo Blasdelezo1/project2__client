@@ -1,25 +1,25 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
 
 import EditFestivalForm from '../../components/EditFestivalForm/EditFestivalForm'
-
+import './EditFestivalPage.css'
 
 const EditFestivalPage = () => {
 
-    const { festivalId } = useParams()
-
-
     return (
-        <Container>
-
+        <Container className='EditFestivalPage'>
             <Row>
                 <Col>
-                    {<EditFestivalForm />}
+                    <h1>TITULO</h1>
+                    {/* TOTO: TITULO PARA EL FORM */}
                 </Col>
             </Row>
+
+
+
+
+            <EditFestivalForm />
         </Container>
     )
-
 }
 
 export default EditFestivalPage

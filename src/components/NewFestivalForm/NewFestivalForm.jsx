@@ -4,10 +4,10 @@ import { Container, Button, Form, Row, Col, InputGroup } from "react-bootstrap"
 
 import axios from "axios"
 import './NewFestivalForm.css'
+import { FESTIVAL_GENRES } from "../../consts/festival.consts"
 
 const API_BASE_URL = 'http://localhost:5005'
 
-const genres = ["Pop", "Rock", "Hip-hop", "R&B", "Jazz", "Blues", "Country", "Techno", "House", "Trance", "Drum and Bass", "Reggae", "Punk", "Metal", "Indie", "Alternative", "Funk", "Disco"]
 
 const NewFestivalForm = () => {
 
@@ -84,7 +84,7 @@ const NewFestivalForm = () => {
                         <Form.Label>Short Description</Form.Label>
                         <Form.Control
                             type="text"
-                            value={newFestival.shorDescription}
+                            value={newFestival.shortDescription}
                             onChange={handleInputChange}
                             name={'shortDescription'}
                         />
@@ -165,7 +165,7 @@ const NewFestivalForm = () => {
                             <Col>
                                 <Container className="genres-box">
                                     {
-                                        genres.map((genre) => {
+                                        FESTIVAL_GENRES.map((genre) => {
                                             return (
                                                 <Form.Check
                                                     className="genreCheckbox"
@@ -190,8 +190,6 @@ const NewFestivalForm = () => {
                                 < Form.Text>Select at least 5 musical genres</Form.Text>
                             </Col>
                         </Row>
-
-
                     </Form.Group>
                 </Col>
             </Row>

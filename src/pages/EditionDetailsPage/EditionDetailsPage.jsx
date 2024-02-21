@@ -52,13 +52,10 @@ const EditionsDetailsPage = () => {
             :
             <Container className="EditionDetailsPage">
                 {
-                    edition &&
-                    <>
-                        <h1>{festival.name} edition {edition.year}</h1>
-                    </>
+                    edition && <h1 className="titleEditionDetails">{festival.name} edition {edition.year}</h1>
                 }
-                <Row>
-                    <Col md={5}>
+                <Row className="infoEditionDetails">
+                    <Col md={9}>
                         <Card.Body>
                             <p>Relive the unforgettable moments of the <strong>{edition.year}</strong> edition of the <strong>{festival.name}</strong>!</p>
                             <p>Start date: <strong>{edition.starts}</strong></p>
@@ -69,26 +66,22 @@ const EditionsDetailsPage = () => {
                             <p>We hope to see you again in future editions of the <strong>{festival.name}</strong>!</p>
                         </Card.Body>
                     </Col>
-                    <Col md={5}>
+                    <Col md={3}>
                         <Card>
-                            <Card.Header> <strong>Tickets</strong> </Card.Header>
+                            <Card.Header className="ticketsTitle"> <strong>Tickets</strong> </Card.Header>
                             {
-                                edition.tickets && edition.tickets.map((ticket, idx) => <TicketsCard {...ticket} key={idx} />)
+                                edition.tickets?.map((ticket, idx) => <TicketsCard {...ticket} key={idx} />)
                             }
                         </Card>
                     </Col>
                 </Row>
 
-                <ListGroup horizontal>
+
+                <Carousel className="carouselEditionDetails">
                     {
-                        edition.sponsors && edition.sponsors.map((sponsor, idx) => <SponsorCard {...sponsor} key={idx} />)
-                    }
-                </ListGroup >
-                <Carousel>
-                    {
-                        edition.sources.images && edition.sources.images.map((img) => {
+                        edition.sources?.images?.map((img) => {
                             return (
-                                <Carousel.Item>
+                                <Carousel.Item className="imgCarouselEditionDetails">
                                     <img src={img} />
                                 </ Carousel.Item>
                             )
@@ -97,8 +90,19 @@ const EditionsDetailsPage = () => {
                 </Carousel>
                 <Row>
                     <Col>
+                        <h4>Official sponsors:</h4>
+                    </Col>
+                </Row>
+                <ListGroup horizontal className="sponsorCardsContainer">
+                    {
+                        edition.sponsors?.map((sponsor, idx) => <SponsorCard {...sponsor} key={idx} />)
+                    }
+
+                </ListGroup >
+                <Row>
+                    <Col>
                         <Link to={"/editions"}>
-                            <Button variant="dark">Back</Button>
+                            <Button className="backButton" variant="dark">Back</Button>
                         </Link>
                     </Col>
                 </Row>
