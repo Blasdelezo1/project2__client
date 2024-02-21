@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap'
 import FestivalsList from '../../components/FestivalsList/FestivalsList'
-import SideBar from '../../components/Aside/SideBar'
+
 import './FestivalsPage.css'
 
 const FestivalsPage = () => {
@@ -15,7 +15,7 @@ const FestivalsPage = () => {
                 <FestivalsList />
             </Container >
 
-            <SideBar />
+
 
         </>
 

@@ -1,5 +1,6 @@
 import './SearchBar.css'
 import { useState } from 'react'
+import { Form } from 'react-bootstrap'
 
 const SearchBar = ({ searchHandler }) => {
 
@@ -13,14 +14,16 @@ const SearchBar = ({ searchHandler }) => {
 
 
     return (
+        <div className='SearchBar'>
+            <input
+                type='text'
+                placeholder='Type Here...'
+                value={searchFest}
+                onChange={handleSearch}
+            />
+        </div>
 
-        <input className='SearchBar'
-            type='text'
-            placeholder='Type Here...'
-            value={searchFest}
-            onChange={handleSearch}
-        >
-        </input>
+
     )
 }
 
