@@ -19,8 +19,8 @@ function NavBar() {
                         <Nav className="me-auto">
                             <Nav.Link href="/festivals">Festivals</Nav.Link>
                             <Nav.Link href="/editions">Editions</Nav.Link>
-                            <Nav.Link href="/create">Create Festival</Nav.Link>
-                            <Nav.Link href="/create/:newedition">Create Edition</Nav.Link>
+                            <Nav.Link href="/create-festival">Create Festival</Nav.Link>
+                            <Nav.Link href="/create-edition">Create Edition</Nav.Link>
                         </Nav>
                         {/* <Dropdown>
                             <Dropdown.Toggle variant="dark">

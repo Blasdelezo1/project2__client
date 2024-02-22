@@ -1,33 +1,37 @@
-import './NewEditionForm.css'
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { Button, Form, Row, Col, InputGroup } from "react-bootstrap"
 
 import axios from "axios"
+import './NewEditionForm.css'
+
 
 const API_BASE_URL = 'http://localhost:5005'
 
 const NewEditionForm = () => {
 
-    const navigate = useNavigate()
-
+    const [festivals, setFestivals] = useState([])
     const [newEdition, setNewEdition] = useState({
+        festivalId: '',
+        year: 2024,
         starts: '',
         ends: '',
-        capacity: '',
-        stages: '',
-        tickets: [
-            {
-                type: '',
-                price: ''
-            }
-        ],
-        sources: {
-            images: ''
-        }
+        capacity: 0,
+        stages: 0,
+        tickets: [{ type: '', price: 0 }],
+        sources: [{ images: '' }]
+    });
 
-    })
+    const navigate = useNavigate()
+
+    useEffect(() => loadFestivals())
+
+    const loadFestivals = () => {
+        axios
+            .get(`${API_BASE_URL}/festivals`)
+            .then(({ data }) => setFestivals(data))
+            .catch(err => console.log(err))
+    }
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
@@ -64,13 +68,50 @@ const NewEditionForm = () => {
                 }
             })
         }
-
     }
 
     return (
 
         <div className=' NewEditionForm'>
             <Form onSubmit={handleFormSubmit} md={{ span: 10, offset: 1 }}>
+                <Row>
+                    <Col>
+                        <Form.Group controlId="festivalId">
+                            <Form.Label>Festival</Form.Label>
+                            <Form.Select
+                                value={newEdition.festivalId}
+                                onChange={(e) => setNewEdition({ ...newEdition, festivalId: parseInt(e.target.value) })}
+                            >
+                                <option defaultValue="Choose festival..." value="">Choose festival...</option>
+                                {
+                                    festivals?.map((festival) => {
+                                        return (
+                                            <option
+                                                key={festival.id}
+                                                type="string"
+                                                value={festival.id}
+
+                                            />
+                                        )
+                                    })
+                                }
+                            </Form.Select>
+
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group controlId="year">
+                            <Form.Label>Edition Year</Form.Label>
+                            <Form.Control
+                                type="number"
+                                value={newEdition.year}
+                                onChange={handleInputChange}
+                                name={'year'}
+                                placeholder="2024"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
                 <Row>
                     <Col>
                         <Form.Group controlId="starts">
@@ -81,7 +122,6 @@ const NewEditionForm = () => {
                                 onChange={handleInputChange}
                                 name={'starts'}
                             />
-
                         </Form.Group>
                     </Col>
 
@@ -102,7 +142,7 @@ const NewEditionForm = () => {
                         <Form.Group controlId="capacity">
                             <Form.Label>Capacity</Form.Label>
                             <Form.Control
-                                type="text"
+                                type="number"
                                 className="capacityedition"
                                 value={newEdition.capacity}
                                 onChange={handleInputChange}
@@ -114,7 +154,7 @@ const NewEditionForm = () => {
                         <Form.Group controlId="Stages">
                             <Form.Label>Stages</Form.Label>
                             <Form.Control
-                                type="text"
+                                type="number"
                                 value={newEdition.stages}
                                 onChange={handleInputChange}
                                 name={'stages'}
@@ -139,7 +179,7 @@ const NewEditionForm = () => {
                             />
                             <Form.Control
                                 placeholder="Price"
-                                type="text"
+                                type="number"
                                 value={newEdition.tickets.price}
                                 onChange={handleInputChange}
                                 name={'Price'}

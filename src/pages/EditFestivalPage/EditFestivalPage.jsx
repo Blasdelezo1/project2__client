@@ -9,14 +9,9 @@ const EditFestivalPage = () => {
         <Container className='EditFestivalPage'>
             <Row>
                 <Col>
-                    <h1>TITULO</h1>
-                    {/* TOTO: TITULO PARA EL FORM */}
+                    <h1>Edit festival</h1>
                 </Col>
             </Row>
-
-
-
-
             <EditFestivalForm />
         </Container>
     )
