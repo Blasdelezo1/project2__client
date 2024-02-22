@@ -35,13 +35,11 @@ const FestivalDetailsPage = () => {
     }
 
     const loadEditions = () => {
-        // TODO: RESOLVER ESTO CON QUERY DE JSON SERVER
         axios
-            .get(`${API_BASE_URL}/editions`)
+            .get(`${API_BASE_URL}/editions?festivalId=${festivalId}`)
             .then(({ data }) => {
-                const filteredEditions = data.filter(edition => edition.festivalId === festivalId);
-                setEditions(filteredEditions);
-                setIsLoading(false);
+                setEditions(data)
+                setIsLoading(false)
             })
             .catch(err => console.log(err))
     }
@@ -66,55 +64,52 @@ const FestivalDetailsPage = () => {
                     <Col md={9}>
                         <Row>
                             <Col md={4}>
-                                <Image className="imgFestDetails" src={festival.logo} />
+                                <Image src={festival.logo} />
                             </Col>
-                            <Col md={8}>
-                                <h1 className="festivalName">{festival.name}</h1>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md={12}>
-                                <Card body>{festival.description}</Card>
+                            <Col className='festivalNameContent' md={8}>
+                                <h1>{festival.name}</h1>
                             </Col>
                         </Row>
                         <Row>
                             <Col md={12}>
-                                <ListGroup horizontal>
+                                <Card body className='descriptionFestivalDetails'>{festival.description}</Card>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}>
+                                <ListGroup horizontal className='editionCardContainerFestivalDetailsPage'>
                                     {
-                                        editions.map((edition) => {
-                                            if (edition.festivalId === festival.id) {
-                                                return (
-                                                    <ListGroup.Item key={edition.id}>
-                                                        <EditionCard {...edition} />
-                                                    </ListGroup.Item>
-                                                );
-                                            }
+                                        editions?.map((edition) => {
+                                            return (
+                                                <ListGroup.Item key={edition.id} className="editionCardFestivalDetailsPage">
+                                                    <EditionCard {...edition} />
+                                                </ListGroup.Item>
+                                            )
                                         })
                                     }
                                 </ListGroup>
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col className='buttonContainer'>
                                 <Link to={"/festivals"}>
-                                    <Button variant="dark">Back</Button>
+                                    <Button className="buttonFestivalDetails" variant="dark">Back</Button>
                                 </Link>
-                            </Col>
-                            <Col>
                                 <Link to={`/festivals/${festivalId}/edit`}>
-                                    <Button variant="dark">Edit</Button>
+                                    <Button className="buttonFestivalDetails" variant="dark">Edit</Button>
                                 </Link>
-                            </Col>
-                            <Col>
+                                <Link to={"/create-edition"}>
+                                    <Button className="buttonFestivalDetails" variant="dark">Add edition</Button>
+                                </Link>
                                 <Link to={"/festivals"}>
-                                    <Button onClick={deleteFestival} variant="dark">Delete</Button>
+                                    <Button className="buttonFestivalDetails" onClick={deleteFestival} variant="dark">Delete</Button>
                                 </Link>
                             </Col>
                         </Row>
                     </Col>
                     <Col md={3}>
                         <div className="genresList">
-                            <h4 className="itemGenresList">Music Genres</h4>
+                            <h4 className="titleMusicGenres">Music Genres</h4>
                             <ListGroup>
                                 {
                                     festival.genres?.map((genre) => (

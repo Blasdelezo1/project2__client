@@ -15,12 +15,16 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
+
             <Route path="/festivals" element={<FestivalsPage />} />
-            <Route path="/festivals/:festivalId" element={<FestivalDetails />} />
             <Route path="/editions" element={<EditionsPage />} />
+
+            <Route path="/festivals/:festivalId" element={<FestivalDetails />} />
             <Route path="/editions/:editionId" element={<EditionDetailsPage />} />
-            <Route path="/create/:newedition" element={<CreateEditionPage />} />
-            <Route path="/create" element={<CreateFestivalPage />} />
+
+            <Route path="/create-festival" element={<CreateFestivalPage />} />
+            <Route path="/create-edition" element={<CreateEditionPage />} />
+
             <Route path="/festivals/:festivalId/edit" element={<EditFestivalPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
