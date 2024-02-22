@@ -20,7 +20,7 @@ const NewEditionForm = () => {
         stages: 0,
         tickets: [{ type: '', price: 0 }],
         sources: [{ images: '' }]
-    });
+    })
 
     const navigate = useNavigate()
 
@@ -67,8 +67,32 @@ const NewEditionForm = () => {
                     images: value
                 }
             })
+
         }
     }
+
+    const handleTicketChange = (e, index, field) => {
+        const { value } = e.target
+        const updatedTickets = [...newEdition.tickets]
+        updatedTickets[index][field] = value
+        setNewEdition({ ...newEdition, tickets: updatedTickets })
+    }
+
+    const addTicket = () => {
+        setNewEdition({ ...newEdition, tickets: [...newEdition.tickets, { type: '', price: 0 }] })
+    }
+
+    const handleSourceChange = (e, index) => {
+        const { value } = e.target
+        const updatedSources = [...newEdition.sources]
+        updatedSources[index] = { images: value }
+        setNewEdition({ ...newEdition, sources: updatedSources })
+    }
+
+    const addSource = () => {
+        setNewEdition({ ...newEdition, sources: [...newEdition.sources, { images: '' }] })
+    }
+
 
     return (
 
@@ -80,23 +104,15 @@ const NewEditionForm = () => {
                             <Form.Label>Festival</Form.Label>
                             <Form.Select
                                 value={newEdition.festivalId}
-                                onChange={(e) => setNewEdition({ ...newEdition, festivalId: parseInt(e.target.value) })}
+                                onChange={(e) => setNewEdition({ ...newEdition, festivalId: e.target.value })}
                             >
-                                <option defaultValue="Choose festival..." value="">Choose festival...</option>
+                                <option value="">Choose festival...</option>
                                 {
-                                    festivals?.map((festival) => {
-                                        return (
-                                            <option
-                                                key={festival.id}
-                                                type="string"
-                                                value={festival.id}
-
-                                            />
-                                        )
-                                    })
+                                    festivals.map((festival) => (
+                                        <option key={festival.id} value={festival.id}>{festival.name}</option>
+                                    ))
                                 }
                             </Form.Select>
-
                         </Form.Group>
                     </Col>
                     <Col>
@@ -169,36 +185,43 @@ const NewEditionForm = () => {
                                 <Form.Label>Tickets</Form.Label>
                             </Col>
                         </Row>
-                        <InputGroup controlId="Tickets">
-                            <Form.Control
-                                placeholder="Type"
-                                type="text"
-                                value={newEdition.tickets.type}
-                                onChange={handleInputChange}
-                                name={'type'}
-                            />
-                            <Form.Control
-                                placeholder="Price"
-                                type="number"
-                                value={newEdition.tickets.price}
-                                onChange={handleInputChange}
-                                name={'Price'}
-                            />
-                        </InputGroup>
+                        {newEdition.tickets.map((ticket, index) => (
+                            <Row key={index}>
+                                <Col>
+                                    <Form.Control
+                                        placeholder="Type"
+                                        type="text"
+                                        value={ticket.type}
+                                        onChange={(e) => handleTicketChange(e, index, 'type')}
+                                    />
+                                </Col>
+                                <Col>
+                                    <Form.Control
+                                        placeholder="Price"
+                                        type="number"
+                                        value={ticket.price}
+                                        onChange={(e) => handleTicketChange(e, index, 'price')}
+                                    />
+                                </Col>
+                            </Row>
+                        ))}
+                        <Button variant="dark" onClick={addTicket}>Add Ticket</Button>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Form.Group controlId="Sources">
-                            <Form.Label>Picture</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value={newEdition.sources.images}
-                                onChange={handleInputChange}
-                                name={'Sources'}
-                                placeholder="http://"
-                            />
-                        </Form.Group>
+                        {newEdition.sources.map((source, index) => (
+                            <Form.Group controlId={`source-${index}`} key={index}>
+                                <Form.Label>Picture {index + 1}</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    value={source.images}
+                                    onChange={(e) => handleSourceChange(e, index)}
+                                    placeholder={`Source ${index + 1} URL`}
+                                />
+                            </Form.Group>
+                        ))}
+                        <Button variant="dark" onClick={addSource}>Add Image Source</Button>
                     </Col>
                 </Row>
 
