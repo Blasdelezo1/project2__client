@@ -1,8 +1,16 @@
+import { Container } from "react-bootstrap"
+import './NotFoundPage.css'
+
 const NotFoundPage = () => {
 
 
     return (
-        <h1 className="notfound">NOT FOUND</h1>
+        <Container className="NotFoundPage">
+            <h1>NOT FOUND</h1>
+            <h2>SUPER SAD</h2>
+            <h2>🥺</h2>
+        </Container>
+
     )
 }
 

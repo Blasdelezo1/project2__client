@@ -17,7 +17,6 @@ const EditEditionForm = () => {
         capacity: '',
         stages: '',
         tickets: [{ type: '', price: 0 }],
-        sources: [{ images: '' }]
     })
 
     const { editionId } = useParams()
@@ -84,9 +83,9 @@ const EditEditionForm = () => {
                             <Form.Control
                                 type="number"
                                 defaultValue={editionData.year}
-                                value={editionData.year}
                                 onChange={handleInputChange}
                                 name="year"
+                                placeholder={`Current Year: ${editionData.year}`}
                             />
                         </Form.Group>
                     </Col>
@@ -98,9 +97,9 @@ const EditEditionForm = () => {
                             <Form.Control
                                 type="date"
                                 defaultValue={editionData.starts}
-                                value={editionData.starts}
                                 onChange={handleInputChange}
                                 name="starts"
+                                placeholder={`Current Opening Date: ${editionData.starts}`}
                             />
                         </Form.Group>
                     </Col>
@@ -110,9 +109,9 @@ const EditEditionForm = () => {
                             <Form.Control
                                 type="date"
                                 defaultValue={editionData.ends}
-                                value={editionData.ends}
                                 onChange={handleInputChange}
                                 name="ends"
+                                placeholder={`Current Closing Date: ${editionData.ends}`}
                             />
                         </Form.Group>
                     </Col>
@@ -125,9 +124,9 @@ const EditEditionForm = () => {
                                 type="number"
                                 className="capacityedition"
                                 defaultValue={editionData.capacity}
-                                value={editionData.capacity}
                                 onChange={handleInputChange}
                                 name="capacity"
+                                placeholder={`Current Capacity: ${editionData.capacity}`}
                             />
                         </Form.Group>
                     </Col>
@@ -137,9 +136,9 @@ const EditEditionForm = () => {
                             <Form.Control
                                 type="number"
                                 defaultValue={editionData.stages}
-                                value={editionData.stages}
                                 onChange={handleInputChange}
                                 name="stages"
+                                placeholder={`Current Stages: ${editionData.stages}`}
                             />
                         </Form.Group>
                     </Col>
@@ -157,7 +156,6 @@ const EditEditionForm = () => {
                                     <Form.Control
                                         placeholder="Type"
                                         type="text"
-                                        defaultValue={editionData.tickets.type}
                                         value={ticket.type}
                                         onChange={(e) => handleTicketChange(e, index, 'type')}
                                     />
@@ -167,7 +165,6 @@ const EditEditionForm = () => {
                                     <Form.Control
                                         placeholder="Price"
                                         type="number"
-                                        defaultValue={editionData.tickets.price}
                                         value={ticket.price}
                                         onChange={(e) => handleTicketChange(e, index, 'price')}
                                     />
@@ -175,20 +172,6 @@ const EditEditionForm = () => {
                             </Row>
                         ))}
                         <Button variant="dark" onClick={addTicket}>Add Ticket</Button>
-                    </Col>
-                </Row>
-                <Row className="RowMarginBottom">
-                    <Col>
-                        {editionData.sources.map((source, index) => (
-                            <Form.Group controlId={`source-${index}`} key={index}>
-                                <Form.Label>Images</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={source.images}
-                                    readOnly
-                                />
-                            </Form.Group>
-                        ))}
                     </Col>
                 </Row>
 

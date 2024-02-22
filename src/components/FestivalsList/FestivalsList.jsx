@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Row, Container, Button } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import './FestivalsList.css'
 
 import axios from "axios"

@@ -17,6 +17,11 @@
     margin: 30px auto;
 }
 
+.carouselEditionDetailsContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .carouselEditionDetails {
     margin: 30px auto;
 }

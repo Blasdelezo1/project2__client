@@ -1,82 +1,40 @@
-/* .HomePage {
-    /* margin-top: auto; */
-/* padding-top: 100px; */
-/* margin-bottom: auto;
-    padding-bottom: 100px; */
-/* margin: auto;
-    padding: 100px 0;
-    background-image: url(./../../assets/images/background-image2.jpg); */
+.HomePage {
+    margin: 30px auto;
+}
 
+.titleHomePage {
+    font-size: 5em;
+}
 
-/* }
-
-.carouselContainer {
-    max-width: 800px;
+.CarouselHomePage {
+    width: auto;
     height: 600px;
-    overflow: hidden;
-    margin-left: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
-.imgCarouselHp {
-    width: 100%;
-    height: 100%;
-}
-
-.imgCarouselHp img {
-    width: 100%;
-    height: 100%;
+.imgCarouselHomePage img {
+    width: auto;
+    height: 600px;
     object-fit: cover;
-} */
-/* .HomePage {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 20px;
-    background-image: url(./../../assets/images/background-image2.jpg);
-} */
-
-/* .carouselContainer {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-} */
-
-/* .editioncard-hp {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-} */
-
-.editioncard-hp {
-    display: flex;
-    justify-content: center;
-
 }
 
-.EditionCardLinkHp,
-.FestivalCardLinkHp {
-    text-decoration: none;
+.cardContainerHomePage {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
 }
 
-.EditiHp,
-.FestivalCardHp {
+.CardsHomePage {
     width: 500px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    margin-left: 100px;
-    margin-top: 5px;
-
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.EditiHp:hover,
-.FestivalCardHp:hover {
-    transform: scale(1.05);
+.infoCardHomePage {
+    border: .5px solid gray;
+    border-bottom-left-radius: 1cap;
+    border-bottom-right-radius: 1cap;
 }
-
-/* .imgContainerEditionHp,
-.imgContainerFestivalCardHp {
-    height: 300px;
-    overflow: hidden;
-} */

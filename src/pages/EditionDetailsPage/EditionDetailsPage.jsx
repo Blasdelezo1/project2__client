@@ -82,19 +82,19 @@ const EditionsDetailsPage = () => {
                         </Card>
                     </Col>
                 </Row>
-
-
-                <Carousel className="carouselEditionDetails">
-                    {
-                        edition.sources?.images?.map((img) => {
-                            return (
-                                <Carousel.Item className="imgCarouselEditionDetails">
-                                    <img src={img} />
-                                </ Carousel.Item>
-                            )
-                        })
-                    }
-                </Carousel>
+                <div className="carouselEditionDetailsContainer">
+                    <Carousel className="carouselEditionDetails">
+                        {
+                            edition.sources?.images?.map((img) => {
+                                return (
+                                    <Carousel.Item className="imgCarouselEditionDetails">
+                                        <img src={img} />
+                                    </ Carousel.Item>
+                                )
+                            })
+                        }
+                    </Carousel>
+                </div>
                 <Row>
                     <Col>
                         <h4>Official sponsors:</h4>

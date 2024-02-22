@@ -1,7 +1,4 @@
 .filtered-edition-list {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0px;
-    margin: 0px;
+    margin-top: 0px;
     margin-right: 100px;
 }

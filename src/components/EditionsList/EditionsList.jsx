@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
-import axios from "axios"
 import { Col, Row } from 'react-bootstrap'
+
+import axios from "axios"
+
 import EditionCard from './../EditionCard/EditionCard'
 import SearchBar from "../SearchBar/SearchBar"
 import './EditionsList.css'
@@ -38,10 +40,8 @@ const EditionsList = () => {
         <Row>
             <SearchBar searchHandler={searchHandler} />
             <div >
-
                 <p className="filtered-edition-list"><i>*filtered by year*</i></p>
             </div>
-
 
             {
                 editions.map((edition) => (

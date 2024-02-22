@@ -1,5 +1,5 @@
 import { Carousel, Container, Card, Row, Col, } from 'react-bootstrap'
-import './HomePage.css'
+
 import burningManHp from './../../assets/images/burning-man.jpg'
 import tommorrrowLandHp from './../../assets/images/tommorrowland-hp-image.jpg'
 import snowBombingHp from './../../assets/images/snowbombing-HP-image.webp'
@@ -9,81 +9,44 @@ import cardFestHp from './../../assets/images/cardimagehp.jpg'
 import cardEditHp from './../../assets/images/editioncardhp.jpg'
 import { Link } from 'react-router-dom'
 
+import './HomePage.css'
+
+
 const HomePage = () => {
 
 
     return (
 
-        <div className='HomePage'>
+        <Container className='HomePage'>
 
-            {/* <div className='carouselContainer'>
-                <Container>
-                    <Carousel className='imgCarouselHp'>
-                        <Carousel.Item>
-                            <img src={burningManHp}
-                                alt='burningManImage'
+            <h1 className='titleHomePage'>BEST FEST</h1>
 
-                            />
-                        </ Carousel.Item>
-                        <Carousel.Item>
-                            <img src={tommorrrowLandHp}
-                                alt='tommorrowLandImage'
-                            />
-                        </ Carousel.Item>
-                        <Carousel.Item>
-                            <img src={snowBombingHp}
-                                alt='snowBombingImage'
-                            />
-                        </ Carousel.Item>
-                        <Carousel.Item>
-                            <img src={ultraEuropeHp}
-                                alt='ultraEuImage'
-                            />
-                        </ Carousel.Item>
-                        <Carousel.Item>
-                            <img src={primaveraSoundHp}
-                                alt='primaveraSoundImage'
-                            />
-                        </ Carousel.Item>
-                    </Carousel>
-                </Container>
-            </div> */}
-            <div className="editioncard-hp">
-
-                <Row>
-                    <Col>
-                        <Link to={`/editions/`} className="EditionCardLinkHp">
-                            <Card className="EditiHp">
-                                <div className="imgContainerEditionHp">
-                                    <Card.Img variant="top" src={cardEditHp} />
-                                </div>
-                                <Card.Body className="infoContainerEditionHp">
-                                    <Card.Title><stron>Explore Editions</stron></Card.Title>
-
+            <Row>
+                <Col>
+                    <div className='cardContainerHomePage'>
+                        <Link to={`/festivals/`} >
+                            <Card className="CardsHomePage">
+                                <Card.Img variant="top" src={cardFestHp} alt='Explore Festivals' />
+                                <Card.Body className="infoCardHomePage">
+                                    <Card.Title><strong>Explore Festivals</strong></Card.Title>
                                 </Card.Body>
                             </Card>
                         </Link>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
 
-                        <Link to={`/festivals/`} className="FestivalCardLinkHp">
-                            <Card className="FestivalCardHp" >
-                                <div className="imgContainerFestivalCardHp">
-                                    <Card.Img variant="top" src={cardFestHp} />
-                                </div>
-                                <Card.Body className="infoContainerFestivalCardHp">
-                                    <Card.Title>Explore Festivals</Card.Title>
-
+                        <Link to={`/editions/`}>
+                            <Card className="CardsHomePage">
+                                <Card.Img variant="top" src={cardEditHp} alt='Explore Editions' />
+                                <Card.Body className="infoCardHomePage">
+                                    <Card.Title><strong>Explore Editions</strong></Card.Title>
                                 </Card.Body>
                             </Card>
                         </Link>
-                    </Col>
-                </Row>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
 
-            </div>
-        </div >
+
 
 
     )
