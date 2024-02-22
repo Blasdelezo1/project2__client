@@ -2,7 +2,7 @@ import './NewEditionForm.css'
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Container, Button, Form, Row, Col, InputGroup } from "react-bootstrap"
+import { Button, Form, Row, Col, InputGroup } from "react-bootstrap"
 
 import axios from "axios"
 
