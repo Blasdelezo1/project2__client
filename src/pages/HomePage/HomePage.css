@@ -1,8 +1,82 @@
-.HomePage {
-    margin-top: auto;
-    padding-top: 100px;
-    margin-bottom: auto;
-    padding-bottom: 100px;
+/* .HomePage {
+    /* margin-top: auto; */
+/* padding-top: 100px; */
+/* margin-bottom: auto;
+    padding-bottom: 100px; */
+/* margin: auto;
+    padding: 100px 0;
+    background-image: url(./../../assets/images/background-image2.jpg); */
+
+
+/* }
+
+.carouselContainer {
+    max-width: 800px;
+    height: 600px;
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+.imgCarouselHp {
+    width: 100%;
+    height: 100%;
+}
+
+.imgCarouselHp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+/* .HomePage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
     background-image: url(./../../assets/images/background-image2.jpg);
+} */
+
+/* .carouselContainer {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+} */
+
+/* .editioncard-hp {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+} */
+
+.editioncard-hp {
+    display: flex;
+    justify-content: center;
 
 }
+
+.EditionCardLinkHp,
+.FestivalCardLinkHp {
+    text-decoration: none;
+}
+
+.EditiHp,
+.FestivalCardHp {
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-left: 100px;
+    margin-top: 5px;
+
+}
+
+.EditiHp:hover,
+.FestivalCardHp:hover {
+    transform: scale(1.05);
+}
+
+/* .imgContainerEditionHp,
+.imgContainerFestivalCardHp {
+    height: 300px;
+    overflow: hidden;
+} */

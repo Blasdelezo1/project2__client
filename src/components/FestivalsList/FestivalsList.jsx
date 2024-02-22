@@ -36,10 +36,7 @@ const FestivalsList = () => {
     return (
         <>
             <SearchBar searchHandler={searchHandler} />
-            <div className="button-container">
-                <Button variant="dark" type="submit">Sort by genre</Button>
-                <Button variant="dark" type="submit">Outdoor?</Button>
-            </div>
+
             <Row>
                 {festivals.map((festival) => (
                     <Col key={festival.id} md={4}>
