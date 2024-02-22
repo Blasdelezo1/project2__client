@@ -12,9 +12,9 @@ const CreateEditionPage = () => {
         <Container className="CreateEditionPage">
 
             <Row>
-                <Col md={{ span: 10, offset: 1 }}>
+                <Col>
 
-                    <h1>Design your Edition</h1>
+                    <h1>Create Edition</h1>
 
                     <NewEditionForm />
 

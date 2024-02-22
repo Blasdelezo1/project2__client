@@ -90,22 +90,6 @@ const FestivalDetailsPage = () => {
                                 </ListGroup>
                             </Col>
                         </Row>
-                        <Row>
-                            <Col className='buttonContainer'>
-                                <Link to={"/festivals"}>
-                                    <Button className="buttonFestivalDetails" variant="dark">Back</Button>
-                                </Link>
-                                <Link to={`/festivals/${festivalId}/edit`}>
-                                    <Button className="buttonFestivalDetails" variant="dark">Edit</Button>
-                                </Link>
-                                <Link to={"/create-edition"}>
-                                    <Button className="buttonFestivalDetails" variant="dark">Add edition</Button>
-                                </Link>
-                                <Link to={"/festivals"}>
-                                    <Button className="buttonFestivalDetails" onClick={deleteFestival} variant="dark">Delete</Button>
-                                </Link>
-                            </Col>
-                        </Row>
                     </Col>
                     <Col md={3}>
                         <div className="genresList">
@@ -120,6 +104,22 @@ const FestivalDetailsPage = () => {
                                 }
                             </ListGroup>
                         </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className='buttonContainer'>
+                        <Link to={"/festivals"}>
+                            <Button className="buttonFestivalDetails" variant="dark">Back</Button>
+                        </Link>
+                        <Link to={`/festivals/${festivalId}/edit`}>
+                            <Button className="buttonFestivalDetails" variant="dark">Edit</Button>
+                        </Link>
+                        <Link to={"/create-edition"}>
+                            <Button className="buttonFestivalDetails" variant="dark">Add edition</Button>
+                        </Link>
+                        <Link to={"/festivals"}>
+                            <Button className="buttonFestivalDetails" onClick={deleteFestival} variant="dark">Delete</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Container>

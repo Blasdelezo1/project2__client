@@ -12,7 +12,7 @@ const CreateFestivalPage = () => {
         <Container className="NewFestivalForm">
 
             <Row>
-                <Col md={{ span: 10, offset: 1 }}>
+                <Col>
 
                     <h1>Create Festival</h1>
 

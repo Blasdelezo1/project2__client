@@ -19,7 +19,10 @@ const NewEditionForm = () => {
         capacity: 0,
         stages: 0,
         tickets: [{ type: '', price: 0 }],
-        sources: [{ images: '' }]
+        sources: [{
+            cover: '',
+            images: ''
+        }]
     })
 
     const navigate = useNavigate()
@@ -51,7 +54,7 @@ const NewEditionForm = () => {
         else if (name === 'type' || name === 'price') {
             const tickets = [...newEdition.tickets]
             const index = tickets.findIndex(ticket => ticket.type === name)
-            if (index !== 1) {
+            if (index !== -1) {
                 tickets[index][name] = value
             } else {
                 tickets.push({ [name]: value })
@@ -67,15 +70,24 @@ const NewEditionForm = () => {
                     images: value
                 }
             })
-
+        } else if (name === 'cover') {
+            setNewEdition({
+                ...newEdition,
+                sources: {
+                    ...newEdition.sources,
+                    cover: value
+                }
+            })
         }
     }
 
     const handleTicketChange = (e, index, field) => {
         const { value } = e.target
-        const updatedTickets = [...newEdition.tickets]
-        updatedTickets[index][field] = value
-        setNewEdition({ ...newEdition, tickets: updatedTickets })
+        setNewEdition(prevState => {
+            const updatedTickets = [...prevState.tickets]
+            updatedTickets[index][field] = value
+            return { ...prevState, tickets: updatedTickets }
+        })
     }
 
     const addTicket = () => {
@@ -96,9 +108,9 @@ const NewEditionForm = () => {
 
     return (
 
-        <div className=' NewEditionForm'>
+        <div className='NewEditionForm'>
             <Form onSubmit={handleFormSubmit} md={{ span: 10, offset: 1 }}>
-                <Row>
+                <Row className="RowMarginBottom">
                     <Col>
                         <Form.Group controlId="festivalId">
                             <Form.Label>Festival</Form.Label>
@@ -128,7 +140,7 @@ const NewEditionForm = () => {
                         </Form.Group>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="RowMarginBottom">
                     <Col>
                         <Form.Group controlId="starts">
                             <Form.Label>Opening date</Form.Label>
@@ -153,7 +165,7 @@ const NewEditionForm = () => {
                         </Form.Group>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="RowMarginBottom">
                     <Col>
                         <Form.Group controlId="capacity">
                             <Form.Label>Capacity</Form.Label>
@@ -178,7 +190,7 @@ const NewEditionForm = () => {
                         </Form.Group>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="RowMarginBottom">
                     <Col>
                         <Row>
                             <Col>
@@ -194,6 +206,7 @@ const NewEditionForm = () => {
                                         value={ticket.type}
                                         onChange={(e) => handleTicketChange(e, index, 'type')}
                                     />
+                                    < Form.Text>Add all the types of tickets you need</Form.Text>
                                 </Col>
                                 <Col>
                                     <Form.Control
@@ -208,17 +221,31 @@ const NewEditionForm = () => {
                         <Button variant="dark" onClick={addTicket}>Add Ticket</Button>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="RowMarginBottom">
+                    <Col>
+                        <Form.Group controlId="cover">
+                            <Form.Label>Edition Cover</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={newEdition.sources.cover}
+                                onChange={handleInputChange}
+                                placeholder="https://"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="RowMarginBottom">
                     <Col>
                         {newEdition.sources.map((source, index) => (
                             <Form.Group controlId={`source-${index}`} key={index}>
-                                <Form.Label>Picture {index + 1}</Form.Label>
+                                <Form.Label>Images</Form.Label>
                                 <Form.Control
                                     type="text"
                                     value={source.images}
                                     onChange={(e) => handleSourceChange(e, index)}
-                                    placeholder={`Source ${index + 1} URL`}
+                                    placeholder="https://"
                                 />
+                                < Form.Text>Add at least 2 images</Form.Text>
                             </Form.Group>
                         ))}
                         <Button variant="dark" onClick={addSource}>Add Image Source</Button>
@@ -230,9 +257,7 @@ const NewEditionForm = () => {
                 </div>
             </Form>
         </div>
-
     )
-
 }
 
 export default NewEditionForm

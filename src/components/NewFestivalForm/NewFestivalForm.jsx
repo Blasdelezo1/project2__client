@@ -65,7 +65,7 @@ const NewFestivalForm = () => {
     return (
 
         <Form onSubmit={handleFormSubmit} md={{ span: 10, offset: 1 }}>
-            <Row>
+            <Row className="RowMarginBottom">
                 <Col>
                     <Form.Group controlId="name">
                         <Form.Label>Festival Name</Form.Label>
@@ -92,7 +92,7 @@ const NewFestivalForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-            <Row>
+            <Row className="RowMarginBottom">
                 <Col>
                     <Form.Group controlId="description">
                         <Form.Label>Description</Form.Label>
@@ -106,7 +106,7 @@ const NewFestivalForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-            <Row>
+            <Row className="RowMarginBottom">
                 <Col>
                     <Row>
                         <Col>
@@ -138,7 +138,7 @@ const NewFestivalForm = () => {
                     </InputGroup>
                 </Col>
             </Row>
-            <Row>
+            <Row className="RowMarginBottom">
                 <Col>
                     <Form.Group controlId="logo">
                         <Form.Label>Logo</Form.Label>
@@ -153,7 +153,7 @@ const NewFestivalForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-            <Row>
+            <Row className="RowMarginBottom">
                 <Col>
                     <Form.Group controlId="genres">
                         <Row>
@@ -191,18 +191,6 @@ const NewFestivalForm = () => {
                             </Col>
                         </Row>
                     </Form.Group>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <Form.Check
-                        type="switch"
-                        label="Outdoor festival?"
-                        className="outdoor"
-                        value={newFestival.outdoor}
-                        onChange={handleInputChange}
-                        name={'outdoor'}
-                    />
                 </Col>
             </Row>
             <div className="buttonCreate">

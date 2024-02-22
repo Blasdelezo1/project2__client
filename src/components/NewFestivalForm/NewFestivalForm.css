@@ -2,16 +2,8 @@
     margin-bottom: 80px;
 }
 
-.NewFestivalForm h3 {
-    margin: 20px auto;
-}
-
 .descriptionNewFestival {
     height: 150px;
-}
-
-.buttonCreate {
-    margin: 20px auto;
 }
 
 .genreCheckbox {
@@ -23,4 +15,8 @@
     border: 1px solid rgb(207, 205, 205);
     width: 100%;
     margin: 10px 5px;
+}
+
+.RowMarginBottom {
+    margin-bottom: 15px;
 }
