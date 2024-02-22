@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Form, Row, Col, Container, Button, InputGroup } from 'react-bootstrap'
 
 import axios from 'axios'
 import './EditFestivalForm.css'
 
-const API_BASE_URL = 'http://localhost:5005'
+import { API_BASE_URL } from '../../consts/festival.consts'
+import { FESTIVAL_GENRES } from '../../consts/festival.consts'
 
-const genres = ["Pop", "Rock", "Hip-hop", "R&B", "Jazz", "Blues", "Country", "Techno", "House", "Trance", "Drum and Bass", "Reggae", "Punk", "Metal", "Indie", "Alternative", "Funk", "Disco"]
 
 const EditFestivalForm = () => {
+
     const [festivalData, setFestivalData] = useState({
         name: '',
         shortDescription: '',
@@ -22,8 +23,9 @@ const EditFestivalForm = () => {
         genres: [],
     })
 
-    const { festivalId } = useParams();
-    const navigate = useNavigate();
+    const { festivalId } = useParams()
+
+    const navigate = useNavigate()
 
     useEffect(() => loadFestivalDetails(), [])
 
@@ -41,7 +43,7 @@ const EditFestivalForm = () => {
         axios
             .put(`${API_BASE_URL}/festivals/${festivalId}`, festivalData)
             .then(() => {
-                loadFestivalDetails();
+                loadFestivalDetails()
                 navigate(`/festivals/${festivalId}`)
             })
             .catch(err => console.log(err))
@@ -165,20 +167,22 @@ const EditFestivalForm = () => {
                         <Row>
                             <Col>
                                 <Container className="genres-box">
-                                    {genres.map(genre => (
-                                        <Form.Check
-                                            className="genreCheckbox"
-                                            inline
-                                            label={genre}
-                                            name="genres"
-                                            type="checkbox"
-                                            id={genre}
-                                            key={genre}
-                                            value={genre}
-                                            checked={festivalData.genres.includes(genre)}
-                                            onChange={handleInputChange}
-                                        />
-                                    ))}
+                                    {
+                                        FESTIVAL_GENRES.map(genre => (
+                                            <Form.Check
+                                                className="genreCheckbox"
+                                                inline
+                                                label={genre}
+                                                name="genres"
+                                                type="checkbox"
+                                                id={genre}
+                                                key={genre}
+                                                value={genre}
+                                                checked={festivalData.genres.includes(genre)}
+                                                onChange={handleInputChange}
+                                            />
+                                        ))
+                                    }
                                 </Container>
                             </Col>
                         </Row>

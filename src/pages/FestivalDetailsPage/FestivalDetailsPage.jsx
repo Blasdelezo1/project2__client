@@ -109,16 +109,16 @@ const FestivalDetailsPage = () => {
                 <Row>
                     <Col className='buttonContainer'>
                         <Link to={"/festivals"}>
-                            <Button className="buttonFestivalDetails" variant="dark">Back</Button>
+                            <Button variant="dark">Back</Button>
                         </Link>
                         <Link to={`/festivals/${festivalId}/edit`}>
-                            <Button className="buttonFestivalDetails" variant="dark">Edit</Button>
+                            <Button variant="dark">Edit</Button>
                         </Link>
                         <Link to={"/create-edition"}>
-                            <Button className="buttonFestivalDetails" variant="dark">Add edition</Button>
+                            <Button variant="dark">Add edition</Button>
                         </Link>
                         <Link to={"/festivals"}>
-                            <Button className="buttonFestivalDetails" onClick={deleteFestival} variant="dark">Delete</Button>
+                            <Button onClick={deleteFestival} variant="dark">Delete</Button>
                         </Link>
                     </Col>
                 </Row>

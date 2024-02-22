@@ -45,6 +45,13 @@ const EditionsDetailsPage = () => {
             .catch(err => console.log(err))
     }
 
+    const deleteEdition = () => {
+        axios
+            .delete(`${API_BASE_URL}/editions/${editionId}`)
+            .then(() => navigate('/editions'))
+            .catch(err => console.log(err))
+    }
+
     return (
         isLoading
             ?
@@ -100,9 +107,16 @@ const EditionsDetailsPage = () => {
 
                 </ListGroup >
                 <Row>
-                    <Col>
+                    <Col className='buttonContainer'>
                         <Link to={"/editions"}>
-                            <Button className="backButton" variant="dark">Back</Button>
+                            <Button variant="dark">Back</Button>
+                        </Link>
+                        <Link to={`/editions/${editionId}/edit`}>
+                            <Button variant="dark">Edit</Button>
+                        </Link>
+
+                        <Link to={"/editions"}>
+                            <Button onClick={deleteEdition} variant="dark">Delete</Button>
                         </Link>
                     </Col>
                 </Row>
