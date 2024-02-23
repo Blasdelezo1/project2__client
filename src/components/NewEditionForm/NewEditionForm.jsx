@@ -6,7 +6,7 @@ import axios from "axios"
 import './NewEditionForm.css'
 
 
-const API_BASE_URL = 'http://localhost:5005'
+const API_BASE_URL = "https://bestfest-server.fly.dev"
 
 const NewEditionForm = () => {
 
