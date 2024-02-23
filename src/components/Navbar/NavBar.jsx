@@ -1,4 +1,5 @@
 import { Navbar, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import './NavBar.css'
 
@@ -15,9 +16,9 @@ function NavBar() {
                 </Navbar.Brand>
 
                 <Nav>
-                    <Nav.Link className='navButton' href="/festivals">Festivals</Nav.Link>
-                    <Nav.Link className='navButton' href="/editions">Editions</Nav.Link>
-                    <Nav.Link className='navButton' href="/create-festival">Create Festival</Nav.Link>
+                    <Link to="/festivals" className='navButton nav-link'>Festivals</Link>
+                    <Link to="/editions" className='navButton nav-link'>Editions</Link>
+                    <Link to="/create-festival" className='navButton nav-link'>Create festival</Link>
                 </Nav>
 
             </Navbar>
