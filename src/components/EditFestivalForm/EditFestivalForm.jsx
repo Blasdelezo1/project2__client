@@ -128,6 +128,7 @@ const EditFestivalForm = () => {
                             placeholder="City"
                             type="text"
                             defaultValue={festivalData.location.city}
+                            onChange={handleInputChange}
                             name="city"
                         />
                         <Form.Control

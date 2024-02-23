@@ -5,7 +5,7 @@ import { Card } from "react-bootstrap"
 import axios from "axios"
 import './EditionCard.css'
 
-const API_BASE_URL = 'http://localhost:5005'
+const API_BASE_URL = "https://bestfest-server.fly.dev"
 
 const EditionCard = ({ id, year, sources, festivalId }) => {
 

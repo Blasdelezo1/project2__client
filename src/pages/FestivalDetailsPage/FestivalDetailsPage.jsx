@@ -7,7 +7,7 @@ import EditionCard from '../../components/EditionCard/EditionCard'
 import axios from 'axios'
 import './FestivalDetailsPage.css'
 
-const API_BASE_URL = 'http://localhost:5005'
+const API_BASE_URL = "https://bestfest-server.fly.dev"
 
 const FestivalDetailsPage = () => {
 

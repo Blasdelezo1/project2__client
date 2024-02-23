@@ -1,6 +1,10 @@
 import { Container, Card, Row, Col, } from 'react-bootstrap'
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 221eaf2220c2f7d0d3f3fc7f53c686bf074c0e00
 import cardFestHp from './../../assets/images/cardimagehp.jpg'
 import cardEditHp from './../../assets/images/editioncardhp.jpg'
 import { Link } from 'react-router-dom'
@@ -41,10 +45,6 @@ const HomePage = () => {
                 </Col>
             </Row>
         </Container>
-
-
-
-
     )
 }
 export default HomePage
