@@ -1,10 +1,6 @@
-import { Carousel, Container, Card, Row, Col, } from 'react-bootstrap'
+import { Container, Card, Row, Col, } from 'react-bootstrap'
 
-import burningManHp from './../../assets/images/burning-man.jpg'
-import tommorrrowLandHp from './../../assets/images/tommorrowland-hp-image.jpg'
-import snowBombingHp from './../../assets/images/snowbombing-HP-image.webp'
-import ultraEuropeHp from './../../assets/images/ultraeu_HP_image.jpeg'
-import primaveraSoundHp from './../../assets/images/primaverasound_HP_image.jpg'
+
 import cardFestHp from './../../assets/images/cardimagehp.jpg'
 import cardEditHp from './../../assets/images/editioncardhp.jpg'
 import { Link } from 'react-router-dom'
